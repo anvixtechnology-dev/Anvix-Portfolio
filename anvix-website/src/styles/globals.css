@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --anvix-azure: #1f63e0;
+    --anvix-azure-soft: #b4d1ff;
+    --anvix-ink: #050609;
+    --anvix-midnight: #0d1729;
+    --anvix-mist: #eff3f9;
+    --nav-height: 76px;
+  }
+
+  * {
+    @apply border-white/5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-height) + 16px);
+    -webkit-text-size-adjust: 100%;
+    /* Framer Motion measures the scroll container for parallax offsets and
+       requires it to be positioned rather than static. */
+    position: relative;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-mist-100/80 antialiased;
+    background-color: #050609;
+    background-image:
+      radial-gradient(90% 55% at 12% -5%, rgba(20, 33, 58, 0.85) 0%, transparent 60%),
+      radial-gradient(70% 45% at 95% 5%, rgba(13, 23, 41, 0.9) 0%, transparent 62%);
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(31, 99, 224, 0.32);
+    color: #f8fafd;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-medium text-mist-50;
+    letter-spacing: -0.02em;
+  }
+
+  /* Focus ring — accessible, brand-consistent */
+  :focus-visible {
+    outline: 2px solid rgba(31, 99, 224, 0.85);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050609;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0f307a, #0d1729);
+    border-radius: 999px;
+    border: 2px solid #050609;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #1f63e0, #0f307a);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* --- Layout ---------------------------------------------------- */
+  .container-anvix {
+    @apply mx-auto w-full max-w-[1320px] px-5 sm:px-6 lg:px-8 xl:px-10;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  /* --- Typography helpers ---------------------------------------- */
+  .eyebrow {
+    @apply font-mono text-2xs uppercase tracking-ultra text-azure-400/90;
+  }
+
+  .display-xl {
+    @apply font-display text-[2.15rem] leading-[1.08] font-semibold tracking-tightest sm:text-5xl lg:text-[4.1rem] lg:leading-[1.04];
+  }
+
+  .display-lg {
+    @apply font-display text-[1.9rem] leading-[1.12] font-semibold tracking-tightest sm:text-4xl lg:text-[3.15rem] lg:leading-[1.06];
+  }
+
+  .display-md {
+    @apply font-display text-3xl leading-[1.16] font-semibold tracking-tightest sm:text-[2.35rem];
+  }
+
+  .body-lg {
+    @apply text-[0.975rem] leading-[1.75] text-mist-100/70 sm:text-[1.0625rem];
+  }
+
+  .body-md {
+    @apply text-[0.9375rem] leading-[1.75] text-mist-100/65;
+  }
+
+  .text-azure-gradient {
+    @apply bg-azure-sheen bg-clip-text text-transparent;
+  }
+
+  /* --- Surfaces --------------------------------------------------- */
+  .surface-card {
+    @apply relative rounded-2xl border border-white/[0.07] bg-white/[0.022] shadow-card backdrop-blur-sm transition-colors duration-500;
+  }
+
+  .surface-card-hover {
+    @apply hover:border-azure-500/40 hover:bg-white/[0.035];
+  }
+
+  .glass {
+    @apply border border-white/[0.08] bg-ink-900/70 backdrop-blur-xl;
+  }
+
+  /* Hairline divider with an azure centre accent */
+  .rule-azure {
+    @apply relative h-px w-full bg-white/[0.08];
+  }
+  .rule-azure::after {
+    content: '';
+    @apply absolute left-0 top-0 h-px w-24 bg-gradient-to-r from-transparent via-azure-500/70 to-transparent;
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* --- Forms ------------------------------------------------------ */
+  .field-label {
+    @apply mb-2 block font-mono text-2xs uppercase tracking-wide2 text-mist-100/55;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-white/10 bg-ink-950/60 px-4 py-3 text-[0.9375rem] text-mist-50 placeholder:text-mist-100/30 transition-colors duration-300;
+  }
+
+  .field:hover {
+    @apply border-white/20;
+  }
+
+  .field:focus {
+    @apply border-azure-500/70 bg-ink-950/80 outline-none ring-1 ring-azure-500/25;
+  }
+
+  .field-error {
+    @apply border-red-500/55 focus:border-red-400 focus:ring-red-500/20;
+  }
+
+  .field-select {
+    @apply cursor-pointer appearance-none bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f63e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-position: right 0.9rem center;
+  }
+
+  /* --- Chips ------------------------------------------------------ */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-2xs uppercase tracking-wide2 text-mist-100/60 transition-colors duration-300;
+  }
+
+  .chip-azure {
+    @apply border-azure-500/35 bg-azure-500/[0.07] text-azure-300;
+  }
+
+  /* --- Utilities -------------------------------------------------- */
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .shadow-azure-soft {
+    box-shadow: 0 24px 60px -34px rgba(31, 99, 224, 0.42);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .will-transform {
+    will-change: transform;
+  }
+}
