@@ -7,66 +7,36 @@ interface LogoMarkProps {
   stacked?: boolean
 }
 
+/** Transparent-background ANVIX mark (ribbon "A" with arrow). */
+export const LOGO_SRC = '/assets/images/anvix-logo.png'
+
 /**
- * The ANVIX mark: a faceted "A" monogram inside an orbital ring — drawn in
- * SVG so it stays crisp at any size and needs no image asset.
+ * The ANVIX mark, optionally paired with the "ANVIX / Technologies" wordmark.
  */
 export function LogoMark({ className, withWordmark = true, stacked = false }: LogoMarkProps) {
   const glyph = (
     <span
       className={cn(
         'relative inline-flex shrink-0 items-center justify-center',
-        stacked ? 'h-10 w-10' : 'h-9 w-9',
+        stacked ? 'h-12 w-12' : 'h-11 w-11',
         className,
       )}
     >
-      <svg viewBox="0 0 48 48" fill="none" className="h-full w-full" aria-hidden="true">
-        <defs>
-          <linearGradient id="anvix-azure" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#A9CBFF" />
-            <stop offset="0.45" stopColor="#3D8BFF" />
-            <stop offset="1" stopColor="#163F88" />
-          </linearGradient>
-          <linearGradient id="anvix-midnight" x1="0" y1="0" x2="1" y2="1">
-            <stop stopColor="#15264F" />
-            <stop offset="1" stopColor="#071027" />
-          </linearGradient>
-        </defs>
-        <rect x="1" y="1" width="46" height="46" rx="12" fill="url(#anvix-midnight)" />
-        <rect
-          x="1"
-          y="1"
-          width="46"
-          height="46"
-          rx="12"
-          stroke="url(#anvix-azure)"
-          strokeOpacity="0.55"
-          strokeWidth="1"
-        />
-        {/* faceted A monogram */}
-        <path d="M24 12 L33 35 H28.6 L24 22.6 L19.4 35 H15 Z" fill="url(#anvix-azure)" />
-        <path d="M24 12 L24 22.6 L19.4 35 H15 Z" fill="url(#anvix-azure)" fillOpacity="0.65" />
-        <rect x="21.4" y="27.6" width="5.2" height="2" rx="1" fill="#3D8BFF" fillOpacity="0.8" />
-        <circle cx="24" cy="24" r="0" fill="none" />
-        {/* orbital ring */}
-        <ellipse
-          cx="24"
-          cy="24"
-          rx="21"
-          ry="8.4"
-          stroke="#3D8BFF"
-          strokeOpacity="0.5"
-          strokeWidth="1"
-          transform="rotate(-24 24 24)"
-        />
-      </svg>
+      <img
+        src={LOGO_SRC}
+        alt={withWordmark ? '' : 'ANVIX Technologies'}
+        width={256}
+        height={256}
+        decoding="async"
+        className="h-full w-full object-contain"
+      />
     </span>
   )
 
   if (!withWordmark) return glyph
 
   return (
-    <span className={cn('inline-flex items-center', stacked ? 'flex-col gap-3' : 'gap-3')}>
+    <span className={cn('inline-flex items-center', stacked ? 'flex-col gap-3' : 'gap-2.5')}>
       {glyph}
       <span className={cn('flex flex-col leading-none', stacked ? 'items-center' : 'items-start')}>
         <span
