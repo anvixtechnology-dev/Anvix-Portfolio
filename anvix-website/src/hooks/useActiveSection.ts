@@ -14,10 +14,17 @@ export function useActiveSection(ids: string[], offset = 140) {
       const position = window.scrollY + offset
       let current = ids[0] ?? ''
 
+      let best = -Infinity
+
+      // Pick the section nearest above the line, regardless of menu order.
       for (const id of ids) {
         const el = document.getElementById(id)
         if (!el) continue
-        if (el.offsetTop <= position) current = id
+        const top = el.getBoundingClientRect().top + window.scrollY
+        if (top <= position && top > best) {
+          best = top
+          current = id
+        }
       }
 
       // Bottom of the page → last section

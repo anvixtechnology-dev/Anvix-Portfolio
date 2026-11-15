@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ProjectCard } from '@/components/sections/ProjectCard'
+import { motion } from 'framer-motion'
+import { ProjectRibbon } from '@/components/sections/ProjectRibbon'
 import { ProjectDetails } from '@/components/sections/ProjectDetails'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { projectCategories, projects } from '@/data/projects'
@@ -20,7 +20,7 @@ export function Projects() {
   )
 
   return (
-    <section id="projects" className="section-pad relative overflow-hidden">
+    <section id="projects" className="section-pad relative overflow-x-clip">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-[-10%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(15,28,61,0.9),transparent_70%)] blur-3xl"
@@ -78,19 +78,8 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Grid */}
-        <motion.div layout className="mt-8 grid gap-6 md:grid-cols-2">
-          <AnimatePresence mode="popLayout">
-            {visible.map((project, i) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={i}
-                onOpen={setActiveProject}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        {/* Curved 3D ribbon */}
+        <ProjectRibbon projects={visible} onOpen={setActiveProject} />
 
         {visible.length === 0 && (
           <p className="mt-10 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-10 text-center body-md">
