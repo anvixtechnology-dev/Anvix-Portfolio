@@ -30,6 +30,15 @@ export default {
           800: '#163F88',
           900: '#102C60',
         },
+        // Secondary accent — neon yellow, used sparingly for emphasis.
+        neon: {
+          200: '#FBFFA8',
+          300: '#F9FF70',
+          400: '#F7FF47',
+          500: '#F5FF1F',
+          600: '#D4DD00',
+          700: '#A3AA00',
+        },
         steel: {
           300: '#8FA3C7',
           400: '#6E84AD',

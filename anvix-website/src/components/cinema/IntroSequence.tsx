@@ -174,14 +174,14 @@ export function IntroSequence({ onReveal, onComplete }: IntroSequenceProps) {
         {/* Accent lines */}
         <div aria-hidden="true" className="absolute inset-x-0 top-[22%] h-px origin-center bg-white/15" data-line />
         <div aria-hidden="true" className="absolute inset-x-0 bottom-[22%] h-px origin-center bg-white/15" data-line />
-        <div aria-hidden="true" className="absolute inset-x-[30%] top-1/2 h-px origin-center bg-azure-500/60" data-line />
+        <div aria-hidden="true" className="absolute inset-x-[30%] top-1/2 h-px origin-center bg-neon-500/70" data-line />
         <div aria-hidden="true" className="absolute inset-y-[22%] left-1/2 w-px origin-top bg-white/10" data-vline />
 
         {/* Corner meta */}
         <div data-meta className="absolute left-5 top-5 font-mono text-2xs uppercase tracking-ultra text-mist-100/45 sm:left-8 sm:top-7">
           ANVIX / Technologies
         </div>
-        <div data-meta className="absolute right-5 top-5 font-mono text-2xs tracking-ultra text-azure-500 sm:right-8 sm:top-7">
+        <div data-meta className="absolute right-5 top-5 font-mono text-2xs tracking-ultra text-neon-500 sm:right-8 sm:top-7">
           <span data-count>000</span>
         </div>
 
@@ -189,7 +189,7 @@ export function IntroSequence({ onReveal, onComplete }: IntroSequenceProps) {
         <div className="absolute inset-0 grid place-items-center">
           <div className="text-center">
             <div data-brand className="display-mega will-transform" style={{ fontSize: 'clamp(4.5rem, 21vw, 19rem)' }}>
-              ANVIX<span className="text-azure-500">.</span>
+              ANVIX<span className="text-neon-500">.</span>
             </div>
             <div className="mt-2 overflow-hidden">
               <p data-brand-sub className="font-mono text-2xs uppercase tracking-ultra text-mist-100/55 sm:text-xs">
@@ -210,7 +210,7 @@ export function IntroSequence({ onReveal, onComplete }: IntroSequenceProps) {
             </p>
           </div>
           <div data-right className="text-right md:w-1/2">
-            <div className="font-condensed uppercase leading-[0.88] text-azure-500" style={{ fontSize: 'clamp(3rem, 9.5vw, 9.5rem)' }}>
+            <div className="font-condensed uppercase leading-[0.88] text-neon-500" style={{ fontSize: 'clamp(3rem, 9.5vw, 9.5rem)' }}>
               <SplitChars text="Digital Impact" />
             </div>
             <p data-caption className="mt-3 font-mono text-2xs uppercase tracking-ultra text-mist-100/45">
@@ -224,7 +224,7 @@ export function IntroSequence({ onReveal, onComplete }: IntroSequenceProps) {
           <div data-blade-track className="will-transform">
             <div
               data-streak
-              className="absolute right-[6em] top-1/2 h-px w-[60vmax] origin-right -translate-y-1/2 bg-gradient-to-l from-azure-500/70 to-transparent"
+              className="absolute right-[6em] top-1/2 h-px w-[60vmax] origin-right -translate-y-1/2 bg-gradient-to-l from-neon-500/80 to-transparent"
             />
             <div data-blur className="will-transform">
               <div

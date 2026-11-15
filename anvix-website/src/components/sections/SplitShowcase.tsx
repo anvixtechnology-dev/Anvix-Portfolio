@@ -34,7 +34,7 @@ function CodeVisual() {
         <div className="flex items-center gap-2 border-b border-white/[0.07] px-4 py-3">
           <span className="h-2 w-2 rounded-full bg-white/15" />
           <span className="h-2 w-2 rounded-full bg-white/15" />
-          <span className="h-2 w-2 rounded-full bg-azure-500" />
+          <span className="h-2 w-2 rounded-full bg-neon-500" />
           <span className="ml-3 font-mono text-2xs text-mist-100/40">quotations.service.ts</span>
         </div>
         <pre className="overflow-hidden px-4 py-4 font-mono text-[0.68rem] leading-[1.85] sm:text-[0.74rem]">
@@ -63,7 +63,7 @@ function ProductVisual() {
       <div className="absolute right-[7%] top-[12%] w-[58%] overflow-hidden rounded-xl border border-white/[0.08] bg-ink-900/95">
         <div className="flex items-center justify-between border-b border-white/[0.07] px-4 py-3">
           <span className="font-condensed text-sm uppercase tracking-wide text-mist-50">Storefront</span>
-          <span className="h-5 w-12 rounded-full bg-azure-500/90" />
+          <span className="h-5 w-12 rounded-full bg-neon-500" />
         </div>
         <div className="grid grid-cols-2 gap-2.5 p-3.5">
           {[0, 1, 2, 3].map((i) => (
@@ -89,7 +89,7 @@ function ProductVisual() {
               </div>
             ))}
           </div>
-          <div className="mt-4 h-7 rounded-full bg-azure-500" />
+          <div className="mt-4 h-7 rounded-full bg-neon-500" />
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export function SplitShowcase() {
           <div className="mb-6 flex items-center justify-between gap-6 font-mono text-2xs uppercase tracking-ultra text-mist-100/40">
             <span>What we make</span>
             <span data-rule className="h-px flex-1 origin-left bg-white/10" />
-            <span className="text-azure-500">Build × Experience</span>
+            <span className="text-neon-500">Build × Experience</span>
           </div>
 
           <div className="grid gap-4 md:h-[72svh] md:grid-cols-2 lg:gap-5">

@@ -58,7 +58,7 @@ function DiagonalObject({ ready }: { ready: boolean }) {
               <Prism w={34} h={3.6} d={3.6} />
             </div>
             <div className="preserve-3d" style={{ transform: 'translate3d(3em, 4.8em, 2em)' }}>
-              <Prism variant="charcoal" edge w={20} h={2.4} d={2.4} />
+              <Prism variant="neon" w={20} h={2.4} d={2.4} />
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
             animate={state}
             className="inline-flex items-center gap-3"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-azure-500" />
+            <span className="h-1.5 w-1.5 rounded-full bg-neon-500" />
             <span className="font-mono text-2xs uppercase tracking-wide2 text-mist-100/70">
               Accepting new projects · {site.founded}+
             </span>
@@ -139,7 +139,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
               >
                 <span
                   data-drift={line.drift}
-                  className={`block text-[clamp(2.7rem,9.4vw,9.75rem)] ${line.accent ? 'text-azure-500' : 'text-mist-50'}`}
+                  className={`block text-[clamp(2.7rem,9.4vw,9.75rem)] ${line.accent ? 'text-neon-500' : 'text-mist-50'}`}
                 >
                   {line.text}
                 </span>

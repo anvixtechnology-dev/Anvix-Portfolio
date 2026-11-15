@@ -1,7 +1,7 @@
 import { forwardRef, type CSSProperties } from 'react'
 import { cn } from '@/utils/cn'
 
-type Variant = 'accent' | 'charcoal'
+type Variant = 'accent' | 'neon' | 'charcoal'
 
 const faces: Record<Variant, Record<'front' | 'back' | 'top' | 'bottom' | 'side', string>> = {
   accent: {
@@ -10,6 +10,13 @@ const faces: Record<Variant, Record<'front' | 'back' | 'top' | 'bottom' | 'side'
     top: '#A9CBFF',
     bottom: '#163F88',
     side: '#1B54B3',
+  },
+  neon: {
+    front: 'linear-gradient(100deg, #F5FF1F 0%, #F9FF70 55%, #E4EE00 100%)',
+    back: '#5E6200',
+    top: '#FBFFA8',
+    bottom: '#A3AA00',
+    side: '#C9D200',
   },
   charcoal: {
     front: 'linear-gradient(100deg, #13234A 0%, #182B57 60%, #101E40 100%)',

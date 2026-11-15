@@ -58,12 +58,12 @@ export function Manifesto() {
               <SplitChars text="Build the future." />
             </span>
             <span data-line="2" className="block origin-right text-right will-transform">
-              <SplitChars text="Create the impact." charClassName="text-azure-500" />
+              <SplitChars text="Create the impact." charClassName="text-neon-500" />
             </span>
           </h2>
 
           <div className="mt-10 flex flex-col gap-6 md:mt-14 md:flex-row md:items-center md:justify-between">
-            <span data-bar aria-hidden="true" className="h-[3px] w-full origin-left bg-azure-500 md:w-1/3" />
+            <span data-bar aria-hidden="true" className="h-[3px] w-full origin-left bg-neon-500 md:w-1/3" />
             <p data-support className="max-w-md body-lg">
               From the first sketch to launch day and beyond — ANVIX engineers digital products that
               businesses rely on and customers remember.

@@ -29,7 +29,7 @@ function Art({ id }: { id: string }) {
             <div className="p-4">
               <div className="h-3 w-2/3 rounded-full bg-white/25" />
               <div className={`${line} mt-2.5 w-1/2`} />
-              <div className="mt-4 h-6 w-24 rounded-full bg-azure-500" />
+              <div className="mt-4 h-6 w-24 rounded-full bg-neon-500" />
               <div className="mt-5 grid grid-cols-3 gap-2">
                 {[0, 1, 2].map((i) => <div key={i} className="aspect-[4/3] rounded-md bg-white/[0.06]" />)}
               </div>
@@ -80,7 +80,7 @@ function Art({ id }: { id: string }) {
           <div className={`${card} inset-x-[10%] top-[14%] bottom-[16%] p-4`}>
             <div className="flex h-[48%] items-end gap-1.5">
               {[40, 62, 48, 75, 58, 88, 70, 95].map((h, i) => (
-                <span key={i} className={`flex-1 rounded-sm ${i === 7 ? 'bg-azure-500' : 'bg-white/15'}`} style={{ height: `${h}%` }} />
+                <span key={i} className={`flex-1 rounded-sm ${i === 7 ? 'bg-neon-500' : 'bg-white/15'}`} style={{ height: `${h}%` }} />
               ))}
             </div>
             <div className="mt-4 space-y-2">
@@ -154,7 +154,7 @@ function ServiceCard({ service, i }: { service: (typeof services)[number]; i: nu
           <span className="font-condensed text-5xl leading-none text-outline transition-colors duration-500 group-hover:[-webkit-text-stroke-color:rgba(61,139,255,0.8)]">
             {String(i + 1).padStart(2, '0')}
           </span>
-          <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-mist-100/60 transition-all duration-500 ease-premium group-hover:rotate-45 group-hover:border-azure-500 group-hover:bg-azure-500 group-hover:text-ink-950">
+          <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-mist-100/60 transition-all duration-500 ease-premium group-hover:rotate-45 group-hover:border-neon-500 group-hover:bg-neon-500 group-hover:text-ink-950">
             <ArrowUpRight className="h-4 w-4" />
           </span>
         </div>
@@ -256,7 +256,7 @@ export function ServicesReel() {
           </div>
           <div className="container-anvix mt-6">
             <div className="h-px w-full bg-white/10">
-              <div data-progress className="h-px w-full origin-left bg-azure-500" />
+              <div data-progress className="h-px w-full origin-left bg-neon-500" />
             </div>
           </div>
         </div>

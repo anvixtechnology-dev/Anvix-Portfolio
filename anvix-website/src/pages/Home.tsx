@@ -19,7 +19,7 @@ import { site } from '@/data/site'
 import { useDocumentMeta } from '@/hooks/useDocumentMeta'
 import { ScrollTrigger } from '@/lib/gsap'
 
-/** Thin blue line tracking page progress — ties every scene together. */
+/** Thin neon-yellow line tracking page progress — ties every scene together. */
 function ScrollProgress() {
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.4 })
@@ -27,7 +27,7 @@ function ScrollProgress() {
     <motion.div
       aria-hidden="true"
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-azure-500"
+      className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-neon-500"
     />
   )
 }

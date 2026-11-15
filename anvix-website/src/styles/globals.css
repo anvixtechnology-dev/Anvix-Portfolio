@@ -32,7 +32,7 @@
   }
 
   ::selection {
-    background: #3D8BFF;
+    background: #F5FF1F;
     color: #050B1C;
   }
 
@@ -129,9 +129,9 @@
     @apply text-[0.9375rem] leading-[1.75] text-mist-100/65;
   }
 
-  /* Accent text — flat electric blue (name kept for existing markup). */
+  /* Highlighted words — neon yellow, which stands out on the dark blue. */
   .text-azure-gradient {
-    @apply text-azure-500;
+    @apply text-neon-500;
   }
 
   /* Outlined display text for large secondary words / indices. */
