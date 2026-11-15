@@ -19,7 +19,7 @@ export function Manifesto() {
         scrollTrigger: {
           trigger: root,
           start: 'top top',
-          end: '+=130%',
+          end: '+=70%',
           pin: q('[data-pin]')[0],
           scrub: 0.7,
           anticipatePin: 1,
@@ -51,7 +51,7 @@ export function Manifesto() {
 
   return (
     <section ref={ref} aria-label="Our promise" className="relative overflow-hidden bg-ink-950">
-      <div data-pin className="flex min-h-[80svh] flex-col justify-center py-24 md:h-[100svh] md:py-0">
+      <div data-pin className="flex flex-col justify-center py-14 md:h-[100svh] md:py-0">
         <div className="container-anvix">
           <h2 className="display-mega" style={{ perspective: '900px' }}>
             <span data-line="1" className="block origin-left will-transform">
@@ -62,7 +62,7 @@ export function Manifesto() {
             </span>
           </h2>
 
-          <div className="mt-10 flex flex-col gap-6 md:mt-14 md:flex-row md:items-center md:justify-between">
+          <div className="mt-8 flex flex-col gap-6 md:mt-10 md:flex-row md:items-center md:justify-between">
             <span data-bar aria-hidden="true" className="h-[3px] w-full origin-left bg-neon-500 md:w-1/3" />
             <p data-support className="max-w-md body-lg">
               From the first sketch to launch day and beyond — ANVIX engineers digital products that

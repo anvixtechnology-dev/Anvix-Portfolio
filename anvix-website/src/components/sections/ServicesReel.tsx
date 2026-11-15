@@ -227,7 +227,7 @@ export function ServicesReel() {
 
   return (
     <section ref={ref} id="services" aria-label="Services" className="relative scroll-mt-28 bg-ink-950">
-      <div data-pin className="section-pad lg:flex lg:h-[100svh] lg:flex-col lg:justify-center lg:overflow-hidden lg:pb-8 lg:pt-24">
+      <div data-pin className="section-pad pb-10 sm:pb-12 lg:overflow-hidden lg:pb-10 lg:pt-24">
         <div className="container-anvix">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
@@ -262,7 +262,7 @@ export function ServicesReel() {
         </div>
 
         {/* Tablet / phone grid */}
-        <div className="container-anvix mt-10 grid gap-5 sm:grid-cols-2 lg:hidden">
+        <div className="container-anvix mt-8 grid gap-5 sm:grid-cols-2 lg:hidden">
           {services.map((service, i) => (
             <motion.div
               key={service.id}

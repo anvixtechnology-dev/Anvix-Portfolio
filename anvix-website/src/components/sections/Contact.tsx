@@ -128,7 +128,7 @@ export function Contact() {
       />
 
       <div className="container-anvix relative">
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
           {/* ---------------- Details ---------------- */}
           <div>
             <SectionHeading

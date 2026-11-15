@@ -152,7 +152,7 @@ function PartnerCard({ member, index }: { member: TeamMember; index: number }) {
 
 export function Team() {
   return (
-    <section id="team" className="section-pad relative overflow-hidden bg-ink-950/40">
+    <section id="team" className="section-pad relative overflow-hidden bg-ink-950/40 pt-10 sm:pt-12 lg:pt-16">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-azure-500/25 to-transparent"
@@ -174,13 +174,13 @@ export function Team() {
           align="center"
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-8">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-12 lg:gap-8">
           {team.map((member, i) => (
             <PartnerCard key={member.id} member={member} index={i} />
           ))}
         </div>
 
-        <Reveal delay={0.1} className="mt-12">
+        <Reveal delay={0.1} className="mt-8">
           <div className="flex justify-center rounded-2xl border border-white/[0.07] bg-white/[0.02] px-6 py-6 text-center">
             <p className="body-md max-w-xl">
               We keep the team intentionally small so every project is led by a founder and handled

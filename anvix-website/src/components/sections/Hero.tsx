@@ -35,7 +35,7 @@ function DiagonalObject({ ready }: { ready: boolean }) {
       animate={ready ? { opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' } : undefined}
       transition={{ duration: 1.4, delay: 0.35, ease: EASE }}
       aria-hidden="true"
-      className="relative h-[17rem] w-full sm:h-[22rem] lg:h-[26rem]"
+      className="relative h-[13rem] w-full sm:h-[20rem] lg:h-[26rem]"
     >
       {/* Frame lines */}
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
@@ -93,7 +93,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
     <section
       ref={ref}
       id="home"
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-14 pt-32 sm:pb-16 sm:pt-36 lg:pb-20"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-10 pt-28 sm:pb-14 sm:pt-32 lg:pb-16"
     >
       {/* Background — hairline grid only, no colour washes */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -139,7 +139,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
               >
                 <span
                   data-drift={line.drift}
-                  className={`block text-[clamp(2.7rem,9.4vw,9.75rem)] ${line.accent ? 'text-neon-500' : 'text-mist-50'}`}
+                  className={`block text-[clamp(1.9rem,10vw,9.75rem)] ${line.accent ? 'text-neon-500' : 'text-mist-50'}`}
                 >
                   {line.text}
                 </span>
@@ -149,7 +149,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
         </h1>
 
         {/* Lower band */}
-        <div className="mt-10 grid items-end gap-10 lg:mt-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="mt-8 grid items-end gap-8 lg:mt-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div data-hero-fade>
             <motion.p
               variants={fade}
@@ -184,7 +184,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
               custom={0.7}
               initial="hidden"
               animate={state}
-              className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-white/[0.08] pt-6"
+              className="mt-8 grid max-w-lg grid-cols-3 gap-4 sm:gap-6 border-t border-white/[0.08] pt-6"
             >
               {[
                 { k: '6+', v: 'Products shipped' },
@@ -192,7 +192,7 @@ export function Hero({ ready = true }: { ready?: boolean }) {
                 { k: '100%', v: 'Commitment' },
               ].map((item) => (
                 <div key={item.v}>
-                  <dt className="font-condensed text-4xl text-mist-50">{item.k}</dt>
+                  <dt className="font-condensed text-3xl text-mist-50 sm:text-4xl">{item.k}</dt>
                   <dd className="mt-1.5 font-mono text-2xs uppercase tracking-wide2 text-mist-100/40">
                     {item.v}
                   </dd>

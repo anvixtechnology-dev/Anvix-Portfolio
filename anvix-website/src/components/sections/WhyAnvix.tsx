@@ -16,7 +16,7 @@ export function WhyAnvix() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 grid-lines opacity-25" />
 
       <div className="container-anvix relative">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <SectionHeading
               eyebrow="Why ANVIX"

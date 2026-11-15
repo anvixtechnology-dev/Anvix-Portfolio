@@ -14,7 +14,7 @@ export function About() {
 
       <div className="container-anvix relative">
         {/* Intro */}
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 xl:gap-24">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 xl:gap-24">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <SectionHeading
               eyebrow="About ANVIX"
@@ -77,7 +77,7 @@ export function About() {
         </div>
 
         {/* Value cards */}
-        <RevealGroup className="mt-16 grid gap-5 md:grid-cols-3 lg:mt-20" staggerDelay={0.1}>
+        <RevealGroup className="mt-10 grid gap-5 md:grid-cols-3 lg:mt-14" staggerDelay={0.1}>
           {valueCards.map((card, i) => (
             <RevealItem key={card.index} index={i}>
               <article className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] p-7 transition-all duration-500 ease-premium hover:-translate-y-1 hover:border-azure-500/35 hover:bg-white/[0.035] hover:shadow-card-hover">

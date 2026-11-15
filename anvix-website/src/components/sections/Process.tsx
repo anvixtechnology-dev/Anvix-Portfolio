@@ -18,7 +18,7 @@ export function Process() {
         />
 
         {/* ---------------- Desktop: horizontal ---------------- */}
-        <div className="mt-16 hidden lg:block">
+        <div className="mt-12 hidden lg:block">
           <div className="relative">
             {/* Track */}
             <div aria-hidden="true" className="absolute inset-x-0 top-[3.125rem] h-px bg-white/[0.08]">
@@ -68,7 +68,7 @@ export function Process() {
         </div>
 
         {/* ---------------- Mobile / tablet: vertical ---------------- */}
-        <ol className="relative mt-12 space-y-9 pl-10 lg:hidden">
+        <ol className="relative mt-10 space-y-8 pl-10 lg:hidden">
           <div
             aria-hidden="true"
             className="absolute bottom-4 left-[1.0625rem] top-4 w-px bg-white/[0.08]"
@@ -104,7 +104,7 @@ export function Process() {
           ))}
         </ol>
 
-        <Reveal delay={0.1} className="mt-14">
+        <Reveal delay={0.1} className="mt-10">
           <p className="rounded-2xl border border-white/[0.07] bg-white/[0.02] px-6 py-6 text-center body-md sm:px-8">
             Every engagement ends with documentation, deployment and a clear handover — so you
             never depend on us to keep your product running.

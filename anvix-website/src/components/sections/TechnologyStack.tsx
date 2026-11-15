@@ -27,7 +27,7 @@ export function TechnologyStack() {
         />
 
         <RevealGroup
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
           staggerDelay={0.06}
         >
           {technologyGroups.map((group, groupIndex) => (
@@ -102,7 +102,7 @@ export function TechnologyStack() {
         </RevealGroup>
 
         {/* Marquee of capabilities */}
-        <Reveal delay={0.1} className="mt-14">
+        <Reveal delay={0.1} className="mt-10">
           <div className="mask-fade-x relative overflow-hidden py-1">
             <div className="flex w-max animate-marquee items-center gap-8">
               {[...Array(2)].map((_, set) => (

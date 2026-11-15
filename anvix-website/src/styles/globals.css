@@ -89,7 +89,7 @@
   }
 
   .section-pad {
-    @apply py-20 sm:py-24 lg:py-32;
+    @apply py-14 sm:py-16 lg:py-24;
   }
 
   /* --- Typography helpers ---------------------------------------- */
@@ -99,12 +99,12 @@
 
   /* Bold condensed display type — large, uppercase, tightly set. */
   .display-xl {
-    @apply font-condensed text-[2.9rem] font-normal uppercase leading-[0.94] sm:text-7xl lg:text-[6.2rem] lg:leading-[0.9];
+    @apply font-condensed text-[2.4rem] font-normal uppercase leading-[0.94] sm:text-7xl lg:text-[6.2rem] lg:leading-[0.9];
     letter-spacing: -0.012em;
   }
 
   .display-lg {
-    @apply font-condensed text-[2.5rem] font-normal uppercase leading-[0.96] sm:text-[3.4rem] lg:text-[4.6rem] lg:leading-[0.92];
+    @apply font-condensed text-[2.1rem] font-normal uppercase leading-[0.96] sm:text-[3.4rem] lg:text-[4.6rem] lg:leading-[0.92];
     letter-spacing: -0.01em;
   }
 
@@ -116,7 +116,7 @@
   /* Massive cinematic statement type (intro, manifesto). */
   .display-mega {
     @apply font-condensed font-normal uppercase text-mist-50;
-    font-size: clamp(3.1rem, 9.4vw, 10.5rem);
+    font-size: clamp(2rem, 10vw, 10.5rem);
     line-height: 0.86;
     letter-spacing: -0.015em;
   }

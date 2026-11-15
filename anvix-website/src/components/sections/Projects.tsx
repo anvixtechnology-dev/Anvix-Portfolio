@@ -38,7 +38,7 @@ export function Projects() {
         />
 
         {/* Filter bar */}
-        <div className="mt-10 flex flex-col gap-5 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
           <div
             role="group"
             aria-label="Filter projects by category"
@@ -79,7 +79,7 @@ export function Projects() {
         </div>
 
         {/* Grid */}
-        <motion.div layout className="mt-10 grid gap-6 md:grid-cols-2">
+        <motion.div layout className="mt-8 grid gap-6 md:grid-cols-2">
           <AnimatePresence mode="popLayout">
             {visible.map((project, i) => (
               <ProjectCard

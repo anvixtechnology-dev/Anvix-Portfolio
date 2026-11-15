@@ -27,7 +27,7 @@ export function Footer() {
 
       <div className="container-anvix relative">
         {/* Top: brand + columns */}
-        <div className="grid gap-12 py-16 lg:grid-cols-[1.35fr_2fr] lg:gap-16 lg:py-20">
+        <div className="grid gap-10 py-12 lg:grid-cols-[1.35fr_2fr] lg:gap-16 lg:py-16">
           <div>
             <LogoMark stacked className="h-11 w-11" />
 

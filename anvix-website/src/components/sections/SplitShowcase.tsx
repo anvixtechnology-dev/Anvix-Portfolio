@@ -139,7 +139,7 @@ export function SplitShowcase() {
         scrollTrigger: {
           trigger: root,
           start: 'top top',
-          end: '+=150%',
+          end: '+=90%',
           pin: q('[data-pin]')[0],
           scrub: 0.8,
           anticipatePin: 1,
@@ -170,7 +170,7 @@ export function SplitShowcase() {
 
   return (
     <section ref={ref} aria-label="What we make" className="relative bg-ink-950">
-      <div data-pin className="flex min-h-[100svh] flex-col justify-center py-20 md:h-[100svh] md:py-0">
+      <div data-pin className="flex flex-col justify-center py-12 md:h-[100svh] md:py-0">
         <div className="container-anvix">
           <div className="mb-6 flex items-center justify-between gap-6 font-mono text-2xs uppercase tracking-ultra text-mist-100/40">
             <span>What we make</span>
@@ -178,12 +178,12 @@ export function SplitShowcase() {
             <span className="text-neon-500">Build × Experience</span>
           </div>
 
-          <div className="grid gap-4 md:h-[72svh] md:grid-cols-2 lg:gap-5">
+          <div className="grid gap-4 md:h-[min(72svh,44rem)] md:grid-cols-2 lg:gap-5">
             {panels.map(({ key, index, label, title, body, Visual }) => (
               <article
                 key={key}
                 data-panel={key}
-                className="relative h-[68svh] overflow-hidden rounded-[18px] border border-white/[0.07] md:h-full"
+                className="relative h-[26rem] overflow-hidden sm:h-[30rem] rounded-[18px] border border-white/[0.07] md:h-full"
               >
                 <div data-media={key} className="absolute inset-x-0 -inset-y-[7%] will-transform">
                   <Visual />
