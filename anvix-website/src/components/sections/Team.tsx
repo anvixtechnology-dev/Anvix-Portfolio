@@ -44,7 +44,7 @@ function PartnerPortrait({ member }: { member: TeamMember }) {
         <div className="absolute inset-0 grid place-items-center">
           {/* Placeholder texture */}
           <div className="absolute inset-0 grid-lines opacity-40" />
-          <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_25%,rgba(31,99,224,0.13),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_25%,rgba(181,255,54,0.13),transparent_70%)]" />
 
           <div className="relative flex flex-col items-center gap-4 px-6 text-center">
             <span className="inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-azure-500/30 bg-ink-950/50 font-display text-2xl tracking-tightest text-azure-300 backdrop-blur-sm">
@@ -108,7 +108,7 @@ function PartnerCard({ member, index }: { member: TeamMember; index: number }) {
       )}
     >
       <CornerAccent className="opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(31,99,224,0.09),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(181,255,54,0.09),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <PartnerPortrait member={member} />
 
@@ -159,7 +159,7 @@ export function Team() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(20,33,58,0.5),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -right-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(30,30,28,0.5),transparent_70%)] blur-3xl"
       />
 
       <div className="container-anvix relative">
@@ -181,17 +181,11 @@ export function Team() {
         </div>
 
         <Reveal delay={0.1} className="mt-12">
-          <div className="flex flex-col items-center gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.02] px-6 py-6 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="flex justify-center rounded-2xl border border-white/[0.07] bg-white/[0.02] px-6 py-6 text-center">
             <p className="body-md max-w-xl">
               We keep the team intentionally small so every project is led by a founder and handled
               with real care.
             </p>
-            <a
-              href="#openings"
-              className="shrink-0 font-mono text-2xs uppercase tracking-wide2 text-azure-300 transition-colors duration-300 hover:text-azure-200"
-            >
-              Join the team →
-            </a>
           </div>
         </Reveal>
       </div>

@@ -22,7 +22,7 @@ export function Footer() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(20,33,58,0.6),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(30,30,28,0.6),transparent_70%)] blur-3xl"
       />
 
       <div className="container-anvix relative">
@@ -94,6 +94,12 @@ export function Footer() {
               className="text-[0.875rem] text-mist-100/60 transition-colors duration-300 hover:text-azure-200"
             >
               {site.phone}
+            </a>
+            <a
+              href={`tel:${site.phone2Href}`}
+              className="text-[0.875rem] text-mist-100/60 transition-colors duration-300 hover:text-azure-200"
+            >
+              {site.phone2}
             </a>
             <span className="text-[0.875rem] text-mist-100/40">{site.location}</span>
           </div>

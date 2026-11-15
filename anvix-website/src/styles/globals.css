@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --anvix-azure: #1f63e0;
-    --anvix-azure-soft: #b4d1ff;
-    --anvix-ink: #050609;
-    --anvix-midnight: #0d1729;
-    --anvix-mist: #eff3f9;
+    --anvix-azure: #B5FF36; /* neon lime — primary accent */
+    --anvix-azure-soft: #D9FF94;
+    --anvix-ink: #050505;
+    --anvix-midnight: #161616;
+    --anvix-mist: #E8E8E2;
     --nav-height: 76px;
   }
 
@@ -27,17 +27,13 @@
 
   body {
     @apply bg-ink-950 font-sans text-mist-100/80 antialiased;
-    background-color: #050609;
-    background-image:
-      radial-gradient(90% 55% at 12% -5%, rgba(20, 33, 58, 0.85) 0%, transparent 60%),
-      radial-gradient(70% 45% at 95% 5%, rgba(13, 23, 41, 0.9) 0%, transparent 62%);
-    background-attachment: fixed;
+    background-color: #050505;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: rgba(31, 99, 224, 0.32);
-    color: #f8fafd;
+    background: #B5FF36;
+    color: #050505;
   }
 
   h1,
@@ -50,7 +46,7 @@
 
   /* Focus ring — accessible, brand-consistent */
   :focus-visible {
-    outline: 2px solid rgba(31, 99, 224, 0.85);
+    outline: 2px solid rgba(181,255,54, 0.85);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -61,15 +57,15 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #050609;
+    background: #050505;
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #0f307a, #0d1729);
+    background: #1E1E1C;
     border-radius: 999px;
-    border: 2px solid #050609;
+    border: 2px solid #050505;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #1f63e0, #0f307a);
+    background: #557F0D;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -101,16 +97,28 @@
     @apply font-mono text-2xs uppercase tracking-ultra text-azure-400/90;
   }
 
+  /* Bold condensed display type — large, uppercase, tightly set. */
   .display-xl {
-    @apply font-display text-[2.15rem] leading-[1.08] font-semibold tracking-tightest sm:text-5xl lg:text-[4.1rem] lg:leading-[1.04];
+    @apply font-condensed text-[2.9rem] font-normal uppercase leading-[0.94] sm:text-7xl lg:text-[6.2rem] lg:leading-[0.9];
+    letter-spacing: -0.012em;
   }
 
   .display-lg {
-    @apply font-display text-[1.9rem] leading-[1.12] font-semibold tracking-tightest sm:text-4xl lg:text-[3.15rem] lg:leading-[1.06];
+    @apply font-condensed text-[2.5rem] font-normal uppercase leading-[0.96] sm:text-[3.4rem] lg:text-[4.6rem] lg:leading-[0.92];
+    letter-spacing: -0.01em;
   }
 
   .display-md {
-    @apply font-display text-3xl leading-[1.16] font-semibold tracking-tightest sm:text-[2.35rem];
+    @apply font-condensed text-[2.1rem] font-normal uppercase leading-[0.98] sm:text-[2.9rem];
+    letter-spacing: -0.008em;
+  }
+
+  /* Massive cinematic statement type (intro, manifesto). */
+  .display-mega {
+    @apply font-condensed font-normal uppercase text-mist-50;
+    font-size: clamp(3.1rem, 9.4vw, 10.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.015em;
   }
 
   .body-lg {
@@ -121,8 +129,15 @@
     @apply text-[0.9375rem] leading-[1.75] text-mist-100/65;
   }
 
+  /* Accent text — flat neon lime (name kept for existing markup). */
   .text-azure-gradient {
-    @apply bg-azure-sheen bg-clip-text text-transparent;
+    @apply text-azure-500;
+  }
+
+  /* Outlined display text for large secondary words / indices. */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(245, 245, 240, 0.28);
   }
 
   /* --- Surfaces --------------------------------------------------- */
@@ -177,7 +192,7 @@
 
   .field-select {
     @apply cursor-pointer appearance-none bg-no-repeat pr-10;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f63e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23B5FF36' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-position: right 0.9rem center;
   }
 
@@ -210,7 +225,7 @@
   }
 
   .shadow-azure-soft {
-    box-shadow: 0 24px 60px -34px rgba(31, 99, 224, 0.42);
+    box-shadow: 0 24px 60px -34px rgba(181,255,54, 0.42);
   }
 }
 
@@ -223,5 +238,11 @@
   }
   .will-transform {
     will-change: transform;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
   }
 }

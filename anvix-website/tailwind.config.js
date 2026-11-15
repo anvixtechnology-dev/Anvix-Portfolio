@@ -16,46 +16,49 @@ export default {
     },
     extend: {
       colors: {
-        // Core brand palette — electric blue / deep navy / true black
+        // Core brand palette — deep black / neon lime / off-white.
+        // `azure` is kept as the token name for the primary accent so every
+        // component picks up the new brand colour without a rename.
         azure: {
-          50: '#EEF5FF',
-          100: '#D9E8FF',
-          200: '#B4D1FF',
-          300: '#83B0FF',
-          400: '#4C87FA',
-          500: '#1F63E0', // primary brand blue
-          600: '#154DC0',
-          700: '#113C99',
-          800: '#0F307A',
-          900: '#0C2559',
+          50: '#F7FFE8',
+          100: '#EDFFCC',
+          200: '#DCFF9E',
+          300: '#CAFF6B',
+          400: '#BFFF4D',
+          500: '#B5FF36', // primary brand lime
+          600: '#97DB1E',
+          700: '#74AA12',
+          800: '#557F0D',
+          900: '#3A5709',
         },
         steel: {
-          300: '#7E97B8',
-          400: '#5F7C9F',
-          500: '#4A6382',
-          600: '#354A63',
+          300: '#A6A69E',
+          400: '#86867F',
+          500: '#66665F',
+          600: '#474743',
         },
         midnight: {
-          700: '#14213A',
-          800: '#0D1729',
-          900: '#081020',
-          950: '#04080F',
+          700: '#1E1E1C',
+          800: '#171716',
+          900: '#111110',
+          950: '#0A0A0A',
         },
         ink: {
-          700: '#1A1E24',
-          800: '#12151A',
-          900: '#0A0C10',
-          950: '#050609',
+          700: '#1C1C1B',
+          800: '#141414',
+          900: '#0C0C0C',
+          950: '#050505',
         },
         mist: {
-          50: '#F8FAFD',
-          100: '#EFF3F9',
-          200: '#DCE3ED',
+          50: '#F5F5F0',
+          100: '#EAEAE4',
+          200: '#D6D6CF',
         },
       },
       fontFamily: {
         sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
         display: ['"Sora"', 'Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+        condensed: ['Anton', '"Arial Narrow"', 'Impact', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       fontSize: {
@@ -67,12 +70,11 @@ export default {
         wide2: '0.14em',
       },
       backgroundImage: {
-        'azure-sheen':
-          'linear-gradient(110deg, #0F307A 0%, #1F63E0 22%, #B4D1FF 42%, #1F63E0 62%, #113C99 100%)',
+        'azure-sheen': 'linear-gradient(110deg, #B5FF36 0%, #CAFF6B 45%, #DCFF9E 55%, #B5FF36 100%)',
         'azure-fade':
-          'linear-gradient(180deg, rgba(31,99,224,0) 0%, rgba(31,99,224,0.22) 100%)',
+          'linear-gradient(180deg, rgba(181,255,54,0) 0%, rgba(181,255,54,0.14) 100%)',
         'midnight-deep':
-          'radial-gradient(120% 90% at 20% 0%, #0D1729 0%, #0A0C10 55%, #050609 100%)',
+          'radial-gradient(120% 90% at 20% 0%, #141414 0%, #0A0A0A 55%, #050505 100%)',
         'grid-fade':
           'linear-gradient(180deg, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
       },
@@ -80,9 +82,9 @@ export default {
         grid: '64px 64px',
       },
       boxShadow: {
-        azure: '0 0 0 1px rgba(31,99,224,0.28), 0 24px 60px -28px rgba(31,99,224,0.35)',
+        azure: '0 0 0 1px rgba(181,255,54,0.22), 0 24px 60px -32px rgba(181,255,54,0.22)',
         card: '0 30px 70px -40px rgba(0,0,0,0.9)',
-        'card-hover': '0 40px 90px -40px rgba(31,99,224,0.28)',
+        'card-hover': '0 40px 90px -44px rgba(0,0,0,0.95)',
         inset: 'inset 0 1px 0 0 rgba(255,255,255,0.06)',
       },
       transitionTimingFunction: {

@@ -12,7 +12,7 @@ export function TechnologyStack() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_20%_10%,rgba(20,33,58,0.5),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_20%_10%,rgba(30,30,28,0.5),transparent_70%)]"
       />
 
       <div className="container-anvix relative">
@@ -69,25 +69,25 @@ export function TechnologyStack() {
             </RevealItem>
           ))}
 
-          {/* Capability card — balances the 5 groups into a 3×2 grid */}
-          <RevealItem index={5} className="h-full">
+          {/* Capability card — full-width row beneath the 6 groups */}
+          <RevealItem index={6} className="h-full sm:col-span-2 lg:col-span-3">
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-azure-500/25 bg-[linear-gradient(150deg,rgba(20,33,58,0.7),rgba(10,12,16,0.85))] p-6 sm:p-7"
+              className="relative flex h-full flex-col justify-between gap-7 overflow-hidden rounded-2xl border border-azure-500/25 lg:flex-row lg:items-center bg-[linear-gradient(150deg,rgba(30,30,28,0.7),rgba(11,11,11,0.85))] p-6 sm:p-7"
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(31,99,224,0.2),transparent_70%)] blur-xl"
+                className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(181,255,54,0.2),transparent_70%)] blur-xl"
               />
-              <div>
+              <div className="max-w-xl">
                 <h3 className="font-display text-lg text-mist-50">Capability, not just tools</h3>
                 <p className="mt-3 body-md">
                   We pick the stack per problem — the goal is a product your team can build on and
                   keep improving after launch.
                 </p>
               </div>
-              <ul className="mt-7 space-y-2.5">
+              <ul className="space-y-2.5 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-2.5 lg:space-y-0">
                 {['Architecture decisions', 'Performance budgets', 'Security defaults', 'CI-ready delivery'].map(
                   (item) => (
                     <li key={item} className="flex items-center gap-2.5 text-2xs text-mist-100/50">
@@ -111,6 +111,9 @@ export function TechnologyStack() {
                     'Web Platforms',
                     'Mobile Applications',
                     'AI & Automation',
+                    'AI Voice Generation',
+                    'Digital Marketing',
+                    'E-Commerce',
                     'Admin Dashboards',
                     'Business Systems',
                     'API Development',

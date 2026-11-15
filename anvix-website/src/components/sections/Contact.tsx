@@ -124,7 +124,7 @@ export function Contact() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_25%_15%,rgba(20,33,58,0.6),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_25%_15%,rgba(30,30,28,0.6),transparent_70%)]"
       />
 
       <div className="container-anvix relative">
@@ -148,13 +148,20 @@ export function Contact() {
                   label: 'Email',
                   value: site.email,
                   href: `mailto:${site.email}`,
-                  note: site.supportEmail,
+                  note: 'Write to us any time',
                 },
                 {
                   icon: Phone,
                   label: 'Phone',
                   value: site.phone,
                   href: `tel:${site.phoneHref}`,
+                  note: site.hours,
+                },
+                {
+                  icon: Phone,
+                  label: 'Alternate phone',
+                  value: site.phone2,
+                  href: `tel:${site.phone2Href}`,
                   note: site.hours,
                 },
                 {
@@ -234,7 +241,7 @@ export function Contact() {
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(31,99,224,0.12),transparent_70%)] blur-2xl"
+                className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(181,255,54,0.12),transparent_70%)] blur-2xl"
               />
 
               <div className="relative">
@@ -367,6 +374,13 @@ export function Contact() {
                     className="text-azure-300 underline decoration-azure-500/40 underline-offset-4 transition-colors duration-300 hover:text-azure-200"
                   >
                     {site.phone}
+                  </a>{' '}
+                  /{' '}
+                  <a
+                    href={`tel:${site.phone2Href}`}
+                    className="text-azure-300 underline decoration-azure-500/40 underline-offset-4 transition-colors duration-300 hover:text-azure-200"
+                  >
+                    {site.phone2}
                   </a>
                   .
                 </p>

@@ -23,13 +23,13 @@ export function LogoMark({ className, withWordmark = true, stacked = false }: Lo
       <svg viewBox="0 0 48 48" fill="none" className="h-full w-full" aria-hidden="true">
         <defs>
           <linearGradient id="anvix-azure" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#B4D1FF" />
-            <stop offset="0.45" stopColor="#1F63E0" />
-            <stop offset="1" stopColor="#113C99" />
+            <stop stopColor="#D9FF94" />
+            <stop offset="0.45" stopColor="#B5FF36" />
+            <stop offset="1" stopColor="#557F0D" />
           </linearGradient>
           <linearGradient id="anvix-midnight" x1="0" y1="0" x2="1" y2="1">
-            <stop stopColor="#14213A" />
-            <stop offset="1" stopColor="#04080F" />
+            <stop stopColor="#1E1E1C" />
+            <stop offset="1" stopColor="#080808" />
           </linearGradient>
         </defs>
         <rect x="1" y="1" width="46" height="46" rx="12" fill="url(#anvix-midnight)" />
@@ -46,7 +46,7 @@ export function LogoMark({ className, withWordmark = true, stacked = false }: Lo
         {/* faceted A monogram */}
         <path d="M24 12 L33 35 H28.6 L24 22.6 L19.4 35 H15 Z" fill="url(#anvix-azure)" />
         <path d="M24 12 L24 22.6 L19.4 35 H15 Z" fill="url(#anvix-azure)" fillOpacity="0.65" />
-        <rect x="21.4" y="27.6" width="5.2" height="2" rx="1" fill="#1F63E0" fillOpacity="0.8" />
+        <rect x="21.4" y="27.6" width="5.2" height="2" rx="1" fill="#B5FF36" fillOpacity="0.8" />
         <circle cx="24" cy="24" r="0" fill="none" />
         {/* orbital ring */}
         <ellipse
@@ -54,7 +54,7 @@ export function LogoMark({ className, withWordmark = true, stacked = false }: Lo
           cy="24"
           rx="21"
           ry="8.4"
-          stroke="#1F63E0"
+          stroke="#B5FF36"
           strokeOpacity="0.5"
           strokeWidth="1"
           transform="rotate(-24 24 24)"

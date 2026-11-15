@@ -230,6 +230,118 @@ export const projects: Project[] = [
     ],
     links: [{ label: 'Build a similar app', href: '#contact' }],
   },
+  {
+    id: 'prj-pallavi-quotation',
+    index: '05',
+    slug: 'pallavi-quotation',
+    name: 'Pallavi Quotation',
+    category: 'Business Management System',
+    summary:
+      'A quotation management system that turns product and pricing details into professional, ready-to-share quotations in a few clicks.',
+    description:
+      'A web-based quotation system built for Pallavi to create, manage and share customer quotations with accurate pricing, taxes and a consistent branded format.',
+    year: '2026',
+    role: 'Product design, full-stack development, deployment',
+    platforms: ['Web application', 'Admin dashboard'],
+    accent: 'steel',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Firebase'],
+    features: [
+      { title: 'Quick quotation builder', detail: 'Add customer, products and quantities in a single guided form.' },
+      { title: 'Product & price catalogue', detail: 'Maintain items and rates once and reuse them across quotations.' },
+      { title: 'Automatic calculations', detail: 'Line totals, discounts, GST and grand total calculated instantly.' },
+      { title: 'Branded PDF export', detail: 'Professional, print-ready quotations with business details and terms.' },
+      { title: 'Share instantly', detail: 'Send quotations to customers over WhatsApp or email.' },
+      { title: 'Quotation history', detail: 'Search, duplicate and revise previous quotations at any time.' },
+      { title: 'Customer records', detail: 'Customer details saved for faster repeat quotations.' },
+      { title: 'Status tracking', detail: 'Follow each quotation from draft to sent to accepted.' },
+    ],
+    overview:
+      'Pallavi Quotation replaces hand-written and spreadsheet-based quotations with a focused web application. Staff can build an accurate quotation in front of the customer and share a clean, branded document immediately.',
+    problem:
+      'Quotations were prepared manually, which made them slow to produce, inconsistent in format and prone to calculation mistakes. Finding or revising an older quotation meant searching through files and messages.',
+    solution:
+      'We built a quotation system with a reusable product catalogue, automatic tax and discount calculations, branded PDF export and a searchable history — so every quotation is fast, accurate and consistent.',
+    approach: [
+      { phase: 'Discovery', detail: 'Reviewed existing quotation formats, pricing rules and the details customers expect to see.' },
+      { phase: 'Data model', detail: 'Structured customers, products, rates, taxes and quotations for clean reuse.' },
+      { phase: 'Interface', detail: 'Designed a quick, form-driven builder that works on desktop and mobile.' },
+      { phase: 'Build & test', detail: 'Implemented calculations and PDF generation, verified against real quotation samples.' },
+      { phase: 'Launch', detail: 'Deployed with catalogue setup, staff walkthrough and ongoing support.' },
+    ],
+    results: [
+      { metric: 'PDF', label: 'Branded, ready-to-share quotations' },
+      { metric: 'Auto', label: 'Tax, discount and totals' },
+      { metric: 'Saved', label: 'Searchable quotation history' },
+    ],
+    outcomes: [
+      'Quotations are prepared faster and follow one consistent, professional format.',
+      'Automatic calculations remove manual pricing and tax errors.',
+      'Previous quotations can be found, duplicated and revised in seconds.',
+      'Customers receive a clean, branded quotation they can review immediately.',
+    ],
+    gallery: [
+      { id: 'g1', kind: 'dashboard', title: 'Quotation builder', description: 'Customer, items, quantities and live totals in one view.' },
+      { id: 'g2', kind: 'dashboard', title: 'Product catalogue', description: 'Reusable items and rates for faster quotations.' },
+      { id: 'g3', kind: 'dashboard', title: 'Quotation PDF', description: 'Branded, print-ready quotation document.' },
+    ],
+    links: [{ label: 'Request a walkthrough', href: '#contact' }],
+  },
+  {
+    id: 'prj-pallavi-ecommerce',
+    index: '06',
+    slug: 'pallavi-ecommerce-website',
+    name: 'Pallavi E-Commerce Website',
+    category: 'E-Commerce Website',
+    summary:
+      'A modern online store that lets customers browse products, place orders and pay securely — with a simple admin panel to run the business.',
+    description:
+      'A responsive e-commerce website built for Pallavi to sell products online, with product catalogue, cart, secure checkout and order management.',
+    year: '2026',
+    role: 'UI/UX design, full-stack development, payments integration, deployment',
+    platforms: ['Website', 'Admin dashboard'],
+    accent: 'azure',
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Payment Gateway'],
+    features: [
+      { title: 'Product catalogue', detail: 'Categories, product images, pricing and detailed descriptions.' },
+      { title: 'Search & filters', detail: 'Find products quickly by name, category and price.' },
+      { title: 'Cart & checkout', detail: 'Smooth cart, address and checkout flow on any device.' },
+      { title: 'Secure online payments', detail: 'UPI, cards and net banking through a payment gateway.' },
+      { title: 'Order tracking', detail: 'Customers can follow their order from placement to delivery.' },
+      { title: 'Admin panel', detail: 'Manage products, stock, prices and orders without code.' },
+      { title: 'Mobile-first design', detail: 'Fast, responsive storefront designed for mobile shoppers.' },
+      { title: 'SEO-ready pages', detail: 'Search-friendly product pages to attract organic traffic.' },
+    ],
+    overview:
+      'The Pallavi E-Commerce Website takes the business online with a clean, fast storefront. Customers can browse and buy at any time, while the owner manages products and orders from a simple admin panel.',
+    problem:
+      'Sales depended on walk-in customers and phone or WhatsApp orders, which limited reach and made orders, stock and payments hard to keep track of.',
+    solution:
+      'We built a mobile-first online store with a structured product catalogue, secure payments, order tracking and an admin panel — plus SEO-ready pages so new customers can discover the store through search.',
+    approach: [
+      { phase: 'Discovery', detail: 'Defined product categories, ordering flow, payment options and delivery process.' },
+      { phase: 'Design', detail: 'Designed a clean, brand-consistent storefront focused on mobile shoppers.' },
+      { phase: 'Build', detail: 'Developed catalogue, cart, checkout and admin panel on a modern React stack.' },
+      { phase: 'Payments', detail: 'Integrated a secure payment gateway and tested the full order lifecycle.' },
+      { phase: 'Launch', detail: 'Deployed with SEO setup, analytics and owner training for daily operations.' },
+    ],
+    results: [
+      { metric: '24/7', label: 'Online ordering' },
+      { metric: 'Secure', label: 'UPI, card and net banking payments' },
+      { metric: 'Admin', label: 'Product, stock and order control' },
+    ],
+    outcomes: [
+      'The business can sell to customers beyond its local walk-in reach.',
+      'Orders, payments and stock are managed in one place.',
+      'A mobile-first storefront gives shoppers a fast, trustworthy buying experience.',
+      'SEO-ready pages and analytics support ongoing digital marketing.',
+    ],
+    gallery: [
+      { id: 'g1', kind: 'dashboard', title: 'Storefront', description: 'Product listing with categories, search and filters.' },
+      { id: 'g2', kind: 'mobile', title: 'Mobile checkout', description: 'Cart, address and secure payment on mobile.' },
+      { id: 'g3', kind: 'dashboard', title: 'Admin panel', description: 'Products, stock and order management.' },
+    ],
+    links: [{ label: 'Build your online store', href: '#contact' }],
+  },
 ]
 
 /**
@@ -240,6 +352,7 @@ const categoryLabels: Partial<Record<Project['category'], string>> = {
   'Mobile Application': 'Mobile Apps',
   'Vaasthu / Mobile Application': 'Vaasthu App',
   'Architecture / Planning Technology': 'Planning Tech',
+  'E-Commerce Website': 'E-Commerce',
 }
 
 export const projectCategories: ProjectCategoryOption[] = [

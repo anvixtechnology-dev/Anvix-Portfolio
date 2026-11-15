@@ -24,7 +24,7 @@ export function ProjectVisual({
       aria-label={label}
       role="img"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(85%_70%_at_20%_0%,rgba(31,99,224,0.12),transparent_68%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(85%_70%_at_20%_0%,rgba(181,255,54,0.12),transparent_68%)]" />
       <div className="absolute inset-0 grid-lines opacity-30" />
 
       {variant === 'dashboard' && <DashboardArt />}
@@ -146,12 +146,12 @@ function PlanningArt() {
       >
         <defs>
           <linearGradient id="plan-fill" x1="0" y1="0" x2="1" y2="1">
-            <stop stopColor="#1F63E0" stopOpacity="0.2" />
-            <stop offset="1" stopColor="#1F63E0" stopOpacity="0.05" />
+            <stop stopColor="#B5FF36" stopOpacity="0.2" />
+            <stop offset="1" stopColor="#B5FF36" stopOpacity="0.05" />
           </linearGradient>
           <linearGradient id="plan-stroke" x1="0" y1="0" x2="1" y2="1">
-            <stop stopColor="#B4D1FF" />
-            <stop offset="1" stopColor="#1F63E0" />
+            <stop stopColor="#D9FF94" />
+            <stop offset="1" stopColor="#B5FF36" />
           </linearGradient>
         </defs>
 
@@ -166,22 +166,22 @@ function PlanningArt() {
           fill="url(#plan-fill)"
         />
         {/* Dimension lines */}
-        <line x1="70" y1="28" x2="330" y2="28" stroke="#1F63E0" strokeOpacity="0.5" strokeWidth="1" />
-        <line x1="70" y1="23" x2="70" y2="33" stroke="#1F63E0" strokeOpacity="0.5" />
-        <line x1="330" y1="23" x2="330" y2="33" stroke="#1F63E0" strokeOpacity="0.5" />
-        <line x1="56" y1="40" x2="56" y2="200" stroke="#1F63E0" strokeOpacity="0.5" />
-        <line x1="51" y1="40" x2="61" y2="40" stroke="#1F63E0" strokeOpacity="0.5" />
-        <line x1="51" y1="200" x2="61" y2="200" stroke="#1F63E0" strokeOpacity="0.5" />
+        <line x1="70" y1="28" x2="330" y2="28" stroke="#B5FF36" strokeOpacity="0.5" strokeWidth="1" />
+        <line x1="70" y1="23" x2="70" y2="33" stroke="#B5FF36" strokeOpacity="0.5" />
+        <line x1="330" y1="23" x2="330" y2="33" stroke="#B5FF36" strokeOpacity="0.5" />
+        <line x1="56" y1="40" x2="56" y2="200" stroke="#B5FF36" strokeOpacity="0.5" />
+        <line x1="51" y1="40" x2="61" y2="40" stroke="#B5FF36" strokeOpacity="0.5" />
+        <line x1="51" y1="200" x2="61" y2="200" stroke="#B5FF36" strokeOpacity="0.5" />
 
         {/* Rooms */}
-        <rect x="78" y="48" width="110" height="72" stroke="url(#plan-stroke)" strokeWidth="1" fill="#1F63E0" fillOpacity="0.08" />
-        <rect x="196" y="48" width="126" height="72" stroke="url(#plan-stroke)" strokeWidth="1" fill="#1F63E0" fillOpacity="0.05" />
-        <rect x="78" y="128" width="90" height="64" stroke="url(#plan-stroke)" strokeWidth="1" fill="#1F63E0" fillOpacity="0.05" />
-        <rect x="176" y="128" width="146" height="64" stroke="url(#plan-stroke)" strokeWidth="1" fill="#1F63E0" fillOpacity="0.08" />
+        <rect x="78" y="48" width="110" height="72" stroke="url(#plan-stroke)" strokeWidth="1" fill="#B5FF36" fillOpacity="0.08" />
+        <rect x="196" y="48" width="126" height="72" stroke="url(#plan-stroke)" strokeWidth="1" fill="#B5FF36" fillOpacity="0.05" />
+        <rect x="78" y="128" width="90" height="64" stroke="url(#plan-stroke)" strokeWidth="1" fill="#B5FF36" fillOpacity="0.05" />
+        <rect x="176" y="128" width="146" height="64" stroke="url(#plan-stroke)" strokeWidth="1" fill="#B5FF36" fillOpacity="0.08" />
 
         {/* Door arcs */}
-        <path d="M188 120 a12 12 0 0 1 12 12" stroke="#1F63E0" strokeOpacity="0.55" strokeWidth="1" />
-        <path d="M168 128 a12 12 0 0 0 -12 12" stroke="#1F63E0" strokeOpacity="0.55" strokeWidth="1" />
+        <path d="M188 120 a12 12 0 0 1 12 12" stroke="#B5FF36" strokeOpacity="0.55" strokeWidth="1" />
+        <path d="M168 128 a12 12 0 0 0 -12 12" stroke="#B5FF36" strokeOpacity="0.55" strokeWidth="1" />
 
         {/* Selection handles */}
         {[
@@ -190,26 +190,26 @@ function PlanningArt() {
           [78, 120],
           [188, 120],
         ].map(([cx, cy]) => (
-          <rect key={`${cx}-${cy}`} x={cx - 3} y={cy - 3} width="6" height="6" fill="#1F63E0" />
+          <rect key={`${cx}-${cy}`} x={cx - 3} y={cy - 3} width="6" height="6" fill="#B5FF36" />
         ))}
 
         {/* Room labels */}
-        <text x="133" y="88" textAnchor="middle" fill="#EFF3F9" fillOpacity="0.55" fontSize="9" fontFamily="monospace" letterSpacing="1">
+        <text x="133" y="88" textAnchor="middle" fill="#E8E8E2" fillOpacity="0.55" fontSize="9" fontFamily="monospace" letterSpacing="1">
           HALL
         </text>
-        <text x="259" y="88" textAnchor="middle" fill="#EFF3F9" fillOpacity="0.4" fontSize="9" fontFamily="monospace" letterSpacing="1">
+        <text x="259" y="88" textAnchor="middle" fill="#E8E8E2" fillOpacity="0.4" fontSize="9" fontFamily="monospace" letterSpacing="1">
           BEDROOM
         </text>
-        <text x="123" y="164" textAnchor="middle" fill="#EFF3F9" fillOpacity="0.4" fontSize="9" fontFamily="monospace" letterSpacing="1">
+        <text x="123" y="164" textAnchor="middle" fill="#E8E8E2" fillOpacity="0.4" fontSize="9" fontFamily="monospace" letterSpacing="1">
           KITCHEN
         </text>
-        <text x="249" y="164" textAnchor="middle" fill="#EFF3F9" fillOpacity="0.55" fontSize="9" fontFamily="monospace" letterSpacing="1">
+        <text x="249" y="164" textAnchor="middle" fill="#E8E8E2" fillOpacity="0.55" fontSize="9" fontFamily="monospace" letterSpacing="1">
           LIVING
         </text>
-        <text x="200" y="22" textAnchor="middle" fill="#1F63E0" fillOpacity="0.7" fontSize="8" fontFamily="monospace" letterSpacing="1">
+        <text x="200" y="22" textAnchor="middle" fill="#B5FF36" fillOpacity="0.7" fontSize="8" fontFamily="monospace" letterSpacing="1">
           40'
         </text>
-        <text x="46" y="124" textAnchor="middle" fill="#1F63E0" fillOpacity="0.7" fontSize="8" fontFamily="monospace" letterSpacing="1" transform="rotate(-90 46 124)">
+        <text x="46" y="124" textAnchor="middle" fill="#B5FF36" fillOpacity="0.7" fontSize="8" fontFamily="monospace" letterSpacing="1" transform="rotate(-90 46 124)">
           30'
         </text>
       </svg>

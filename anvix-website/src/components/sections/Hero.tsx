@@ -1,167 +1,69 @@
-import { useMemo, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, type Variants } from 'framer-motion'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { Prism } from '@/components/cinema/Prism'
 import { site } from '@/data/site'
 import { heroLabels } from '@/data/content'
-import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
+import { useGsap, gsap, MOTION_OK } from '@/lib/gsap'
 import { EASE } from '@/utils/motion'
 
-/* ------------------------------------------------------------------ */
-/* Abstract orbital visual                                             */
-/* ------------------------------------------------------------------ */
+const lines = [
+  { text: 'We Build', accent: false, drift: -4 },
+  { text: 'Digital Experiences', accent: true, drift: 3 },
+  { text: 'That Matter.', accent: false, drift: -2 },
+]
 
-/** Deterministic pseudo-random so SSR/CSR renders stay identical. */
-const seeded = (index: number, salt: number) => {
-  const value = Math.sin(index * 12.9898 + salt * 78.233) * 43758.5453
-  return value - Math.floor(value)
+const rise: Variants = {
+  hidden: { y: '108%' },
+  show: (i: number) => ({ y: '0%', transition: { duration: 1.05, delay: 0.05 + i * 0.1, ease: EASE } }),
 }
 
-function Particles({ count = 26 }: { count?: number }) {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: count }, (_, i) => ({
-        id: i,
-        x: seeded(i, 1) * 100,
-        y: seeded(i, 2) * 100,
-        size: 1 + seeded(i, 3) * 1.9,
-        delay: seeded(i, 4) * 8,
-        duration: 5 + seeded(i, 5) * 7,
-        opacity: 0.18 + seeded(i, 6) * 0.42,
-      })),
-    [count],
-  )
-
-  return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      {particles.map((p) => (
-        <span
-          key={p.id}
-          className="absolute rounded-full bg-azure-300 will-transform"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: p.size,
-            height: p.size,
-            opacity: p.opacity,
-            boxShadow: '0 0 8px rgba(31,99,224,0.55)',
-            animation: `float ${p.duration}s ease-in-out ${p.delay}s infinite`,
-          }}
-        />
-      ))}
-    </div>
-  )
+const fade: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  show: (d: number) => ({ opacity: 1, y: 0, transition: { duration: 0.85, delay: d, ease: EASE } }),
 }
 
-function OrbitalVisual() {
-  const reduce = usePrefersReducedMotion()
-  const ref = useRef<HTMLDivElement>(null)
+/* ------------------------------------------------------------------ */
+/* Diagonal geometric object — echoes the intro's sweeping prism        */
+/* ------------------------------------------------------------------ */
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  })
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 26])
-  const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -28])
-
+function DiagonalObject({ ready }: { ready: boolean }) {
   return (
-    <div
-      ref={ref}
-      className="relative mx-auto aspect-square w-full max-w-[34rem]"
+    <motion.div
+      initial={{ opacity: 0, clipPath: 'inset(0% 100% 0% 0%)' }}
+      animate={ready ? { opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' } : undefined}
+      transition={{ duration: 1.4, delay: 0.35, ease: EASE }}
       aria-hidden="true"
+      className="relative h-[17rem] w-full sm:h-[22rem] lg:h-[26rem]"
     >
-      {/* Ambient glow */}
-      <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(31,99,224,0.16),transparent_68%)] blur-2xl" />
+      {/* Frame lines */}
+      <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
+      <div className="absolute inset-y-0 left-1/2 w-px bg-white/[0.06]" />
+      <span className="absolute left-0 top-3 font-mono text-2xs uppercase tracking-ultra text-mist-100/35">
+        Fig. 01 — Build
+      </span>
+      <span className="absolute bottom-3 right-0 font-mono text-2xs uppercase tracking-ultra text-mist-100/35">
+        Web · Mobile · AI
+      </span>
 
-      {/* Grid plane */}
-      <div className="absolute inset-0 grid-lines mask-fade-b opacity-40 [transform:perspective(900px)_rotateX(64deg)_translateY(18%)] [transform-origin:center_bottom]" />
-
-      {/* Static hairlines */}
-      <svg className="absolute inset-0 h-full w-full opacity-60" viewBox="0 0 400 400" fill="none">
-        <circle cx="200" cy="200" r="178" stroke="rgba(31,99,224,0.14)" strokeWidth="1" />
-        <circle cx="200" cy="200" r="120" stroke="rgba(31,99,224,0.1)" strokeWidth="1" />
-        <path d="M22 200h356M200 22v356" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
-      </svg>
-
-      {/* Rotating orbit rings */}
-      <motion.div
-        style={reduce ? undefined : { rotate, y }}
-        className="absolute inset-0"
-      >
-        <div className="absolute inset-0 animate-spin-slow">
-          <div className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-azure-500/40 to-transparent" />
-          <div className="absolute bottom-0 left-1/2 h-1/2 w-px -translate-x-1/2 bg-gradient-to-t from-transparent via-azure-500/40 to-transparent" />
-        </div>
-        <div className="absolute inset-[6%] animate-spin-reverse">
-          <div className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-azure-400/30 to-transparent" />
-        </div>
-        <div className="absolute inset-[13%] animate-spin-slow [animation-duration:34s]">
-          <div className="absolute right-0 top-1/2 h-px w-1/2 -translate-y-1/2 bg-gradient-to-l from-transparent via-mist-200/25 to-transparent" />
-        </div>
-      </motion.div>
-
-      {/* Orbiting nodes */}
-      {!reduce && (
-        <>
-          <div className="absolute inset-[6%] animate-spin-slow">
-            <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-azure-300 shadow-[0_0_16px_rgba(31,99,224,0.85)]" />
-          </div>
-          <div className="absolute inset-[13%] animate-spin-reverse [animation-duration:34s]">
-            <span className="absolute right-0 top-1/2 h-2 w-2 translate-x-1/2 -translate-y-1/2 rounded-full bg-azure-400/85 shadow-[0_0_14px_rgba(31,99,224,0.7)]" />
-          </div>
-        </>
-      )}
-
-      {/* Core monogram */}
-      <div className="absolute inset-[26%] grid place-items-center">
-        <div className="relative h-full w-full">
-          <div className="absolute inset-0 rounded-full border border-azure-500/25 bg-ink-950/60 backdrop-blur-md" />
-          <div className="absolute inset-[12%] animate-pulse-ring rounded-full border border-azure-500/30" />
-          <div className="absolute inset-[12%] rounded-full border border-azure-500/20" />
-          <div className="absolute inset-0 grid place-items-center">
-            <svg viewBox="0 0 120 120" className="h-[58%] w-[58%]" fill="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="hero-azure" x1="14" y1="10" x2="106" y2="110" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#B4D1FF" />
-                  <stop offset="0.5" stopColor="#1F63E0" />
-                  <stop offset="1" stopColor="#113C99" />
-                </linearGradient>
-              </defs>
-              <path d="M60 20 L86 100 H74.5 L60 60 L45.5 100 H34 Z" fill="url(#hero-azure)" />
-              <path
-                d="M60 20 L60 60 L45.5 100 H34 Z"
-                fill="url(#hero-azure)"
-                fillOpacity="0.55"
-              />
-              <rect x="53" y="76" width="14" height="6" rx="3" fill="#1F63E0" fillOpacity="0.75" />
-              <ellipse
-                cx="60"
-                cy="60"
-                rx="52"
-                ry="20"
-                stroke="#1F63E0"
-                strokeOpacity="0.45"
-                strokeWidth="1.4"
-                transform="rotate(-26 60 60)"
-              />
-            </svg>
+      <div className="absolute inset-0 grid place-items-center" style={{ perspective: '1100px' }}>
+        <div data-hero-object className="preserve-3d will-transform text-[clamp(8px,1.05vw,14px)]">
+          <div className="preserve-3d" style={{ transform: 'rotateZ(-28deg) rotateX(18deg) rotateY(-22deg)' }}>
+            <div className="preserve-3d" style={{ transform: 'translate3d(-2em, -4.6em, -3em)' }}>
+              <Prism variant="charcoal" edge w={26} h={2.4} d={2.4} />
+            </div>
+            <div className="preserve-3d" style={{ transform: 'translate3d(0, 0, 0)' }}>
+              <Prism w={34} h={3.6} d={3.6} />
+            </div>
+            <div className="preserve-3d" style={{ transform: 'translate3d(3em, 4.8em, 2em)' }}>
+              <Prism variant="charcoal" edge w={20} h={2.4} d={2.4} />
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Node labels */}
-      <div className="absolute left-0 top-1/2 hidden -translate-y-1/2 -translate-x-1 sm:block">
-        <span className="chip chip-azure">API</span>
-      </div>
-      <div className="absolute right-0 top-[18%] hidden -translate-y-1/2 translate-x-1/3 sm:block">
-        <span className="chip">Cloud</span>
-      </div>
-      <div className="absolute bottom-[14%] right-[6%] hidden -translate-y-1/2 translate-x-1/3 sm:block">
-        <span className="chip">AI</span>
-      </div>
-
-      <Particles />
-    </div>
+    </motion.div>
   )
 }
 
@@ -169,84 +71,103 @@ function OrbitalVisual() {
 /* Hero                                                                */
 /* ------------------------------------------------------------------ */
 
-export function Hero() {
-  const words = ['WE BUILD', 'DIGITAL EXPERIENCES', 'THAT MATTER.']
+export function Hero({ ready = true }: { ready?: boolean }) {
+  const ref = useRef<HTMLElement>(null)
+  const state = ready ? 'show' : 'hidden'
+
+  // Scroll-linked depth: headline lines drift apart, the object rotates.
+  useGsap(ref, (mm, root) => {
+    mm.add(MOTION_OK, () => {
+      const trigger = { trigger: root, start: 'top top', end: 'bottom top', scrub: 0.6 }
+      root.querySelectorAll<HTMLElement>('[data-drift]').forEach((line) => {
+        gsap.to(line, { xPercent: Number(line.dataset.drift), ease: 'none', scrollTrigger: trigger })
+      })
+      gsap.fromTo('[data-hero-object]',
+        { rotateX: 0, rotateY: 0 },
+        { rotateX: -38, rotateY: 42, ease: 'none', scrollTrigger: { ...trigger, start: 'top 80%' } })
+      gsap.to('[data-hero-fade]', { opacity: 0.15, y: -40, ease: 'none', scrollTrigger: { ...trigger, start: 'center center' } })
+    })
+  })
 
   return (
     <section
+      ref={ref}
       id="home"
-      className="relative overflow-hidden pb-16 pt-32 sm:pb-20 sm:pt-36 lg:pb-28 lg:pt-44"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-14 pt-32 sm:pb-16 sm:pt-36 lg:pb-20"
     >
-      {/* Background layers */}
+      {/* Background — hairline grid only, no colour washes */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-x-0 top-0 h-[70vh] bg-[radial-gradient(75%_60%_at_75%_20%,rgba(20,33,58,0.6),transparent_70%)]" />
-        <div className="absolute inset-0 grid-lines mask-fade-b opacity-[0.55]" />
-        <div className="absolute left-1/2 top-[-18rem] h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(31,99,224,0.09),transparent_65%)] blur-3xl" />
+        <div className="absolute inset-0 grid-lines mask-fade-b opacity-[0.35]" />
       </div>
 
       <div className="container-anvix relative">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:gap-16">
-          {/* Copy */}
-          <div>
-            {/* Availability pill */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: EASE }}
-              className="inline-flex items-center gap-3 rounded-full border border-azure-500/25 bg-azure-500/[0.06] py-1.5 pl-2 pr-4 backdrop-blur-sm"
-            >
-              <span className="relative flex h-5 w-5 items-center justify-center">
-                <span className="absolute h-2 w-2 rounded-full bg-azure-400/60 animate-pulse-ring" />
-                <span className="h-1.5 w-1.5 rounded-full bg-azure-300" />
-              </span>
-              <span className="font-mono text-2xs uppercase tracking-wide2 text-azure-200/90">
-                Accepting new projects · {site.founded}+
-              </span>
-            </motion.div>
+        {/* Top meta row */}
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-5">
+          <motion.div
+            variants={fade}
+            custom={0}
+            initial="hidden"
+            animate={state}
+            className="inline-flex items-center gap-3"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-azure-500" />
+            <span className="font-mono text-2xs uppercase tracking-wide2 text-mist-100/70">
+              Accepting new projects · {site.founded}+
+            </span>
+          </motion.div>
+          <motion.p
+            variants={fade}
+            custom={0.1}
+            initial="hidden"
+            animate={state}
+            className="font-mono text-2xs uppercase tracking-ultra text-mist-100/40"
+          >
+            {heroLabels.join('  /  ')}
+          </motion.p>
+        </div>
 
-            {/* Category label */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-              className="mt-8 font-mono text-2xs uppercase tracking-ultra text-mist-100/40 sm:mt-10"
-            >
-              {heroLabels.join('  •  ')}
-            </motion.p>
-
-            {/* Heading */}
-            <h1 className="mt-5 font-display font-semibold tracking-tightest">
-              {words.map((word, i) => (
-                <span key={word} className="block overflow-hidden">
-                  <motion.span
-                    initial={{ y: '110%' }}
-                    animate={{ y: '0%' }}
-                    transition={{ duration: 0.95, delay: 0.14 + i * 0.11, ease: EASE }}
-                    className={cnWordClass(i)}
-                  >
-                    {word}
-                  </motion.span>
+        {/* Headline */}
+        <h1 className="mt-8 font-condensed font-normal uppercase leading-[0.88] tracking-[-0.012em] sm:mt-10">
+          {lines.map((line, i) => (
+            <span key={line.text} className="block overflow-hidden pb-[0.03em]">
+              <motion.span
+                variants={rise}
+                custom={i}
+                initial="hidden"
+                animate={state}
+                className="block will-transform"
+              >
+                <span
+                  data-drift={line.drift}
+                  className={`block text-[clamp(2.7rem,9.4vw,9.75rem)] ${line.accent ? 'text-azure-500' : 'text-mist-50'}`}
+                >
+                  {line.text}
                 </span>
-              ))}
-            </h1>
+              </motion.span>
+            </span>
+          ))}
+        </h1>
 
-            {/* Supporting copy */}
+        {/* Lower band */}
+        <div className="mt-10 grid items-end gap-10 lg:mt-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div data-hero-fade>
             <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: EASE }}
-              className="mt-7 max-w-xl body-lg text-pretty"
+              variants={fade}
+              custom={0.45}
+              initial="hidden"
+              animate={state}
+              className="max-w-xl body-lg text-pretty"
             >
               ANVIX Technologies transforms ideas into scalable digital products through software,
               mobile applications, intelligent systems and modern technology.
             </motion.p>
 
-            {/* Actions */}
             <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.62, ease: EASE }}
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+              variants={fade}
+              custom={0.55}
+              initial="hidden"
+              animate={state}
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
               <Button size="lg" sheen onClick={() => scrollTo('projects')}>
                 View Our Projects
@@ -258,20 +179,20 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Trust row */}
             <motion.dl
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.8, ease: EASE }}
-              className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-white/[0.07] pt-7"
+              variants={fade}
+              custom={0.7}
+              initial="hidden"
+              animate={state}
+              className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-white/[0.08] pt-6"
             >
               {[
-                { k: '4+', v: 'Products shipped' },
+                { k: '6+', v: 'Products shipped' },
                 { k: '2', v: 'Founding partners' },
                 { k: '100%', v: 'Commitment' },
               ].map((item) => (
                 <div key={item.v}>
-                  <dt className="font-display text-2xl text-azure-gradient">{item.k}</dt>
+                  <dt className="font-condensed text-4xl text-mist-50">{item.k}</dt>
                   <dd className="mt-1.5 font-mono text-2xs uppercase tracking-wide2 text-mist-100/40">
                     {item.v}
                   </dd>
@@ -280,26 +201,11 @@ export function Hero() {
             </motion.dl>
           </div>
 
-          {/* Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, delay: 0.25, ease: EASE }}
-            className="relative"
-          >
-            <OrbitalVisual />
-          </motion.div>
+          <DiagonalObject ready={ready} />
         </div>
       </div>
     </section>
   )
-}
-
-/* The middle line gets the azure treatment; the others stay mist. */
-function cnWordClass(index: number) {
-  const base =
-    'block text-[1.7rem] leading-[1.1] sm:text-5xl sm:leading-[1.06] lg:text-[3.85rem] lg:leading-[1.03]'
-  return index === 1 ? `${base} text-azure-gradient` : `${base} text-mist-50`
 }
 
 function scrollTo(id: string) {

@@ -2,17 +2,17 @@
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#081020"/>
-      <stop offset="0.55" stop-color="#0A0C10"/>
-      <stop offset="1" stop-color="#050609"/>
+      <stop offset="0.55" stop-color="#050505"/>
+      <stop offset="1" stop-color="#050505"/>
     </linearGradient>
     <linearGradient id="azure" x1="30" y1="20" x2="260" y2="200" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#B4D1FF"/>
-      <stop offset="0.45" stop-color="#1F63E0"/>
-      <stop offset="1" stop-color="#113C99"/>
+      <stop stop-color="#D9FF94"/>
+      <stop offset="0.45" stop-color="#B5FF36"/>
+      <stop offset="1" stop-color="#557F0D"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-      <stop stop-color="#1F63E0" stop-opacity="0.22"/>
-      <stop offset="1" stop-color="#1F63E0" stop-opacity="0"/>
+      <stop stop-color="#B5FF36" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#B5FF36" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
@@ -22,16 +22,16 @@
   </g>
   <circle cx="900" cy="315" r="290" fill="url(#glow)"/>
   <g transform="translate(900 315)">
-    <ellipse rx="190" ry="74" fill="none" stroke="#1F63E0" stroke-opacity="0.45" transform="rotate(-24)"/>
-    <ellipse rx="150" ry="150" fill="none" stroke="#1F63E0" stroke-opacity="0.22"/>
+    <ellipse rx="190" ry="74" fill="none" stroke="#B5FF36" stroke-opacity="0.45" transform="rotate(-24)"/>
+    <ellipse rx="150" ry="150" fill="none" stroke="#B5FF36" stroke-opacity="0.22"/>
     <path d="M0 -84 L46 76 H27.6 L0 4.4 L-27.6 76 H-46 Z" fill="url(#gold)"/>
     <path d="M0 -84 L0 4.4 L-27.6 76 H-46 Z" fill="url(#gold)" fill-opacity="0.55"/>
   </g>
   <g font-family="Helvetica, Arial, sans-serif">
-    <text x="90" y="250" fill="#EFF3F9" font-size="58" font-weight="600" letter-spacing="1">ANVIX</text>
-    <text x="90" y="308" fill="#1F63E0" font-size="58" font-weight="600" letter-spacing="1">TECHNOLOGIES</text>
-    <text x="90" y="368" fill="#EFF3F9" fill-opacity="0.62" font-size="25" letter-spacing="3">BUILDING IDEAS. CREATING TECHNOLOGY.</text>
-    <text x="90" y="418" fill="#EFF3F9" fill-opacity="0.38" font-size="17" letter-spacing="2">SOFTWARE  •  AI  •  MOBILE  •  WEB  •  INNOVATION</text>
+    <text x="90" y="250" fill="#E8E8E2" font-size="58" font-weight="600" letter-spacing="1">ANVIX</text>
+    <text x="90" y="308" fill="#B5FF36" font-size="58" font-weight="600" letter-spacing="1">TECHNOLOGIES</text>
+    <text x="90" y="368" fill="#E8E8E2" fill-opacity="0.62" font-size="25" letter-spacing="3">BUILDING IDEAS. CREATING TECHNOLOGY.</text>
+    <text x="90" y="418" fill="#E8E8E2" fill-opacity="0.38" font-size="17" letter-spacing="2">SOFTWARE  •  AI  •  MOBILE  •  WEB  •  INNOVATION</text>
   </g>
-  <rect x="90" y="470" width="120" height="2" fill="#1F63E0" fill-opacity="0.7"/>
+  <rect x="90" y="470" width="120" height="2" fill="#B5FF36" fill-opacity="0.7"/>
 </svg>

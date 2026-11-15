@@ -23,6 +23,10 @@ export type IconName =
   | 'sparkles'
   | 'bot'
   | 'workflow'
+  | 'megaphone'
+  | 'mic'
+  | 'chart'
+  | 'search'
 
 /* ------------------------------------------------------------------ */
 /* Projects                                                             */
@@ -33,6 +37,7 @@ export type ProjectCategory =
   | 'Mobile Application'
   | 'Architecture / Planning Technology'
   | 'Vaasthu / Mobile Application'
+  | 'E-Commerce Website'
 
 /** Categories used by the project filter bar. */
 export interface ProjectCategoryOption {

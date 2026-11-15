@@ -1,5 +1,4 @@
 export * from './site'
 export * from './projects'
 export * from './team'
-export * from './jobs'
 export * from './content'

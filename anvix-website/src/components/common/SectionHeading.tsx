@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { fadeUp, transition, viewportSoft } from '@/utils/motion'
+import { EASE, fadeUp, transition, viewportSoft } from '@/utils/motion'
 import { cn } from '@/utils/cn'
 
 interface SectionHeadingProps {
@@ -26,6 +26,7 @@ export function SectionHeading({
   as: Tag = 'h2',
 }: SectionHeadingProps) {
   const centered = align === 'center'
+  const MotionTag = motion[Tag]
 
   return (
     <motion.div
@@ -47,7 +48,24 @@ export function SectionHeading({
         </div>
       )}
 
-      <Tag className={cn('mt-5 display-lg text-balance', centered && 'max-w-3xl')}>{title}</Tag>
+      {/* Masked rise — the title slides up out of its own baseline */}
+      {/* The observer sits on the mask (not the clipped title) so it can fire. */}
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className={cn('mt-5 overflow-hidden pb-[0.06em]', centered && 'max-w-3xl')}
+      >
+        <MotionTag
+          variants={{
+            hidden: { y: '102%' },
+            show: { y: '0%', transition: { duration: 1, ease: EASE, delay: 0.08 } },
+          }}
+          className="display-lg text-balance will-transform"
+        >
+          {title}
+        </MotionTag>
+      </motion.div>
 
       {description && (
         <p className={cn('mt-6 body-lg max-w-2xl text-pretty', centered && 'mx-auto')}>{description}</p>

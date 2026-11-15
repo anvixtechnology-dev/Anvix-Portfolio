@@ -1,5 +1,20 @@
 import { motion } from 'framer-motion'
-import { Boxes, Code2, GitBranch, ShieldCheck, Sparkles, Workflow, Bot, Database, Cloud, Gauge } from 'lucide-react'
+import {
+  Boxes,
+  Code2,
+  GitBranch,
+  ShieldCheck,
+  Sparkles,
+  Workflow,
+  Bot,
+  Database,
+  Cloud,
+  Gauge,
+  Megaphone,
+  Mic,
+  BarChart3,
+  Search,
+} from 'lucide-react'
 import type { IconName } from '@/types'
 
 /**
@@ -17,6 +32,10 @@ const icons: Record<IconName, typeof Code2> = {
   sparkles: Sparkles,
   bot: Bot,
   workflow: Workflow,
+  megaphone: Megaphone,
+  mic: Mic,
+  chart: BarChart3,
+  search: Search,
 }
 
 export function TechIcon({ name, className }: { name: IconName; className?: string }) {

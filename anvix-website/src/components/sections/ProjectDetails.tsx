@@ -230,7 +230,7 @@ function ProjectDetailContent({ project, onClose }: { project: Project; onClose:
         </blockquote>
 
         {/* CTA */}
-        <div className="flex flex-col items-start gap-5 rounded-2xl border border-azure-500/25 bg-[linear-gradient(120deg,rgba(20,33,58,0.6),rgba(10,12,16,0.6))] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+        <div className="flex flex-col items-start gap-5 rounded-2xl border border-azure-500/25 bg-[linear-gradient(120deg,rgba(30,30,28,0.6),rgba(11,11,11,0.6))] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div>
             <h3 className="font-display text-lg text-mist-50">Discuss a similar project</h3>
             <p className="mt-2 max-w-md body-md">

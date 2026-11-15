@@ -23,7 +23,7 @@ export function Projects() {
     <section id="projects" className="section-pad relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[-10%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(13,23,41,0.9),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute right-[-10%] top-1/4 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(22,22,20,0.9),transparent_70%)] blur-3xl"
       />
 
       <div className="container-anvix relative">

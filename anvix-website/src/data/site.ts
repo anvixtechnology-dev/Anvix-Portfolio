@@ -10,13 +10,14 @@ export const site = {
   legalName: 'ANVIX Technologies',
   tagline: 'Building Ideas. Creating Technology.',
   description:
-    'ANVIX Technologies is a software and technology company focused on web development, mobile applications, AI-powered solutions, automation and custom software products.',
+    'ANVIX Technologies is a software and technology company focused on web development, mobile applications, AI-powered solutions, AI voice generation, digital marketing, automation and custom software products.',
   url: 'https://anvixtechnologies.com',
   founded: '2024',
-  email: 'hello@anvixtechnologies.com',
-  supportEmail: 'support@anvixtechnologies.com',
-  phone: '+91 90000 00000',
-  phoneHref: '+919000000000',
+  email: 'anvixtechnology@gmail.com',
+  phone: '+91 93911 54914',
+  phoneHref: '+919391154914',
+  phone2: '+91 93914 50503',
+  phone2Href: '+919391450503',
   location: 'Bhimavaram, Andhra Pradesh, India',
   locationShort: 'Bhimavaram, AP, India',
   hours: 'Mon – Sat · 10:00 – 19:00 IST',
@@ -34,7 +35,6 @@ export const navigation: NavItem[] = [
   { label: 'About', href: '#about', id: 'about' },
   { label: 'Projects', href: '#projects', id: 'projects' },
   { label: 'Team', href: '#team', id: 'team' },
-  { label: 'Openings', href: '#openings', id: 'openings' },
   { label: 'Contact', href: '#contact', id: 'contact' },
 ]
 
@@ -43,7 +43,7 @@ export const socials: SocialPlatform[] = [
   { label: 'GitHub', href: 'https://github.com/anvix-technologies', icon: 'github' },
   { label: 'X', href: 'https://x.com/anvixtech', icon: 'x' },
   { label: 'Instagram', href: 'https://instagram.com/anvixtechnologies', icon: 'instagram' },
-  { label: 'Email', href: 'mailto:hello@anvixtechnologies.com', icon: 'mail' },
+  { label: 'Email', href: 'mailto:anvixtechnology@gmail.com', icon: 'mail' },
 ]
 
 export const footerColumns = [
@@ -53,7 +53,6 @@ export const footerColumns = [
       { label: 'About', href: '#about' },
       { label: 'Team', href: '#team' },
       { label: 'Projects', href: '#projects' },
-      { label: 'Careers', href: '#openings' },
     ],
   },
   {
@@ -63,13 +62,14 @@ export const footerColumns = [
       { label: 'Mobile Development', href: '#services' },
       { label: 'AI Solutions', href: '#services' },
       { label: 'Software Development', href: '#services' },
+      { label: 'Digital Marketing', href: '#services' },
+      { label: 'AI Voice Generation', href: '#services' },
     ],
   },
   {
     title: 'Resources',
     links: [
       { label: 'Projects', href: '#projects' },
-      { label: 'Careers', href: '#openings' },
       { label: 'Contact', href: '#contact' },
     ],
   },
@@ -79,6 +79,9 @@ export const projectTypes = [
   'Web Platform',
   'Mobile Application',
   'AI / Automation',
+  'AI Voice Generation',
+  'Digital Marketing',
+  'E-Commerce Website',
   'Custom Software',
   'Business Management System',
   'Not sure yet',

@@ -11,7 +11,7 @@ export function WhyAnvix() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_80%_20%,rgba(20,33,58,0.6),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_80%_20%,rgba(30,30,28,0.6),transparent_70%)]"
       />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 grid-lines opacity-25" />
 
@@ -41,7 +41,7 @@ export function WhyAnvix() {
               >
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_50%_0%,rgba(31,99,224,0.1),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_50%_0%,rgba(181,255,54,0.1),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 />
 
                 <span className="relative font-mono text-2xs tracking-ultra text-azure-500/75">
