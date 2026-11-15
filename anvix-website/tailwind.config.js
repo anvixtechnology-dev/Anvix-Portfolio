@@ -16,43 +16,42 @@ export default {
     },
     extend: {
       colors: {
-        // Core brand palette — deep black / neon lime / off-white.
-        // `azure` is kept as the token name for the primary accent so every
-        // component picks up the new brand colour without a rename.
+        // Core brand palette — deep navy / electric blue / cool off-white.
+        // `azure` is the primary accent token used across every component.
         azure: {
-          50: '#F7FFE8',
-          100: '#EDFFCC',
-          200: '#DCFF9E',
-          300: '#CAFF6B',
-          400: '#BFFF4D',
-          500: '#B5FF36', // primary brand lime
-          600: '#97DB1E',
-          700: '#74AA12',
-          800: '#557F0D',
-          900: '#3A5709',
+          50: '#EEF5FF',
+          100: '#D9E8FF',
+          200: '#A9CBFF',
+          300: '#6FA9FF',
+          400: '#5299FF',
+          500: '#3D8BFF', // primary brand blue
+          600: '#2468D6',
+          700: '#1B54B3',
+          800: '#163F88',
+          900: '#102C60',
         },
         steel: {
-          300: '#A6A69E',
-          400: '#86867F',
-          500: '#66665F',
-          600: '#474743',
+          300: '#8FA3C7',
+          400: '#6E84AD',
+          500: '#526893',
+          600: '#3A4E78',
         },
         midnight: {
-          700: '#1E1E1C',
-          800: '#171716',
-          900: '#111110',
-          950: '#0A0A0A',
+          700: '#15264F',
+          800: '#101E40',
+          900: '#0B1633',
+          950: '#081129',
         },
         ink: {
-          700: '#1C1C1B',
-          800: '#141414',
-          900: '#0C0C0C',
-          950: '#050505',
+          700: '#13234A',
+          800: '#0E1A3A',
+          900: '#0A1531',
+          950: '#050B1C',
         },
         mist: {
-          50: '#F5F5F0',
-          100: '#EAEAE4',
-          200: '#D6D6CF',
+          50: '#F5F7FF',
+          100: '#E6ECFA',
+          200: '#CDD7EE',
         },
       },
       fontFamily: {
@@ -70,11 +69,11 @@ export default {
         wide2: '0.14em',
       },
       backgroundImage: {
-        'azure-sheen': 'linear-gradient(110deg, #B5FF36 0%, #CAFF6B 45%, #DCFF9E 55%, #B5FF36 100%)',
+        'azure-sheen': 'linear-gradient(110deg, #3D8BFF 0%, #6FA9FF 45%, #A9CBFF 55%, #3D8BFF 100%)',
         'azure-fade':
-          'linear-gradient(180deg, rgba(181,255,54,0) 0%, rgba(181,255,54,0.14) 100%)',
+          'linear-gradient(180deg, rgba(61,139,255,0) 0%, rgba(61,139,255,0.14) 100%)',
         'midnight-deep':
-          'radial-gradient(120% 90% at 20% 0%, #141414 0%, #0A0A0A 55%, #050505 100%)',
+          'radial-gradient(120% 90% at 20% 0%, #0E1A3A 0%, #081129 55%, #050B1C 100%)',
         'grid-fade':
           'linear-gradient(180deg, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
       },
@@ -82,7 +81,7 @@ export default {
         grid: '64px 64px',
       },
       boxShadow: {
-        azure: '0 0 0 1px rgba(181,255,54,0.22), 0 24px 60px -32px rgba(181,255,54,0.22)',
+        azure: '0 0 0 1px rgba(61,139,255,0.22), 0 24px 60px -32px rgba(61,139,255,0.22)',
         card: '0 30px 70px -40px rgba(0,0,0,0.9)',
         'card-hover': '0 40px 90px -44px rgba(0,0,0,0.95)',
         inset: 'inset 0 1px 0 0 rgba(255,255,255,0.06)',

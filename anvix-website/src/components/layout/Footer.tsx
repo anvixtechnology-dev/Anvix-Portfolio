@@ -22,7 +22,7 @@ export function Footer() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(30,30,28,0.6),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(21,38,79,0.6),transparent_70%)] blur-3xl"
       />
 
       <div className="container-anvix relative">

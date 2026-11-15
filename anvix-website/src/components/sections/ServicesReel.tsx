@@ -8,7 +8,7 @@ import { EASE } from '@/utils/motion'
 
 /* ------------------------------------------------------------------ */
 /* Per-service art — one consistent language: charcoal frame, hairline  */
-/* grid, a single diagonal lime bar, and a small product motif.         */
+/* grid, a single diagonal blue bar, and a small product motif.         */
 /* ------------------------------------------------------------------ */
 
 const bar = 'absolute h-7 w-[58%] -rotate-[28deg] bg-azure-500'
@@ -102,9 +102,9 @@ function Art({ id }: { id: string }) {
           <div className={`${card} inset-x-[10%] top-[14%] h-[56%] p-4`}>
             <svg viewBox="0 0 200 90" className="h-full w-full" fill="none" aria-hidden="true">
               <path d="M0 80 H200 M0 55 H200 M0 30 H200" stroke="rgba(255,255,255,0.06)" />
-              <path d="M0 78 C30 74 45 60 70 62 S110 40 135 36 S175 14 200 8" stroke="#B5FF36" strokeWidth="2.5" />
+              <path d="M0 78 C30 74 45 60 70 62 S110 40 135 36 S175 14 200 8" stroke="#3D8BFF" strokeWidth="2.5" />
               <path d="M0 82 C40 80 70 72 100 70 S160 58 200 52" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" />
-              <circle cx="200" cy="8" r="4" fill="#B5FF36" />
+              <circle cx="200" cy="8" r="4" fill="#3D8BFF" />
             </svg>
           </div>
           <div className="absolute bottom-[12%] left-[10%] flex gap-2">
@@ -142,7 +142,7 @@ function ServiceCard({ service, i }: { service: (typeof services)[number]; i: nu
       data-card
       className="group relative flex h-full flex-col overflow-hidden rounded-[18px] lg:flex-row border border-white/[0.07] bg-ink-900/60 transition-colors duration-500 hover:border-azure-500/40"
     >
-      <div data-art className="relative aspect-[16/10] overflow-hidden border-b border-white/[0.07] bg-[#0B0B0B] lg:aspect-auto lg:w-[44%] lg:shrink-0 lg:border-b-0 lg:border-r">
+      <div data-art className="relative aspect-[16/10] overflow-hidden border-b border-white/[0.07] bg-[#08122B] lg:aspect-auto lg:w-[44%] lg:shrink-0 lg:border-b-0 lg:border-r">
         <div data-art-inner className="absolute inset-0 transition-transform duration-[900ms] ease-premium will-transform group-hover:scale-[1.04]">
           <div className="absolute inset-0 grid-lines opacity-30" />
           <Art id={service.id} />
@@ -151,7 +151,7 @@ function ServiceCard({ service, i }: { service: (typeof services)[number]; i: nu
 
       <div className="relative flex flex-col p-6 sm:p-7 lg:flex-1 lg:justify-center">
         <div className="flex items-start justify-between gap-6">
-          <span className="font-condensed text-5xl leading-none text-outline transition-colors duration-500 group-hover:[-webkit-text-stroke-color:rgba(181,255,54,0.8)]">
+          <span className="font-condensed text-5xl leading-none text-outline transition-colors duration-500 group-hover:[-webkit-text-stroke-color:rgba(61,139,255,0.8)]">
             {String(i + 1).padStart(2, '0')}
           </span>
           <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-mist-100/60 transition-all duration-500 ease-premium group-hover:rotate-45 group-hover:border-azure-500 group-hover:bg-azure-500 group-hover:text-ink-950">

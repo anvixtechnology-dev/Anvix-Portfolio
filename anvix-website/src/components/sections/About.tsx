@@ -9,7 +9,7 @@ export function About() {
       {/* Ambient */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-1/4 h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(30,30,28,0.55),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -left-40 top-1/4 h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(21,38,79,0.55),transparent_70%)] blur-3xl"
       />
 
       <div className="container-anvix relative">
@@ -83,7 +83,7 @@ export function About() {
               <article className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] p-7 transition-all duration-500 ease-premium hover:-translate-y-1 hover:border-azure-500/35 hover:bg-white/[0.035] hover:shadow-card-hover">
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(100%_70%_at_50%_0%,rgba(181,255,54,0.1),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(100%_70%_at_50%_0%,rgba(61,139,255,0.1),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 />
                 <div className="relative flex items-start justify-between">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-azure-500/25 bg-azure-500/[0.07] text-azure-400 transition-colors duration-500 group-hover:border-azure-500/50 group-hover:bg-azure-500/[0.12]">

@@ -1,22 +1,22 @@
 import { forwardRef, type CSSProperties } from 'react'
 import { cn } from '@/utils/cn'
 
-type Variant = 'lime' | 'charcoal'
+type Variant = 'accent' | 'charcoal'
 
 const faces: Record<Variant, Record<'front' | 'back' | 'top' | 'bottom' | 'side', string>> = {
-  lime: {
-    front: 'linear-gradient(100deg, #B5FF36 0%, #CAFF6B 55%, #A6EF2A 100%)',
-    back: '#3A5709',
-    top: '#DCFF9E',
-    bottom: '#557F0D',
-    side: '#74AA12',
+  accent: {
+    front: 'linear-gradient(100deg, #3D8BFF 0%, #6FA9FF 55%, #2F7BF0 100%)',
+    back: '#102C60',
+    top: '#A9CBFF',
+    bottom: '#163F88',
+    side: '#1B54B3',
   },
   charcoal: {
-    front: 'linear-gradient(100deg, #1C1C1B 0%, #242422 60%, #171716 100%)',
-    back: '#0C0C0C',
-    top: '#2C2C2A',
-    bottom: '#0A0A0A',
-    side: '#141414',
+    front: 'linear-gradient(100deg, #13234A 0%, #182B57 60%, #101E40 100%)',
+    back: '#09142F',
+    top: '#1D3363',
+    bottom: '#081129',
+    side: '#0E1A3A',
   },
 }
 
@@ -28,7 +28,7 @@ interface PrismProps {
   variant?: Variant
   className?: string
   style?: CSSProperties
-  /** Draws a thin lime edge on the charcoal variant. */
+  /** Draws a thin blue edge on the charcoal variant. */
   edge?: boolean
 }
 
@@ -37,11 +37,11 @@ interface PrismProps {
  * WebGL — so it stays cheap enough to animate at 60 FPS.
  */
 export const Prism = forwardRef<HTMLDivElement, PrismProps>(function Prism(
-  { w = 24, h = 3.2, d = 3.2, variant = 'lime', className, style, edge = false },
+  { w = 24, h = 3.2, d = 3.2, variant = 'accent', className, style, edge = false },
   ref,
 ) {
   const c = faces[variant]
-  const border = edge ? '1px solid rgba(181,255,54,0.45)' : undefined
+  const border = edge ? '1px solid rgba(61,139,255,0.45)' : undefined
   const face = 'absolute left-1/2 top-1/2 backface-hidden'
 
   const box = (width: number, height: number, transform: string, background: string): CSSProperties => ({

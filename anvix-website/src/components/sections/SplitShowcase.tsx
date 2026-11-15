@@ -28,7 +28,7 @@ const tone: Record<string, string> = {
 
 function CodeVisual() {
   return (
-    <div className="absolute inset-0 bg-[#0B0B0B]">
+    <div className="absolute inset-0 bg-[#08122B]">
       <div className="absolute inset-0 grid-lines opacity-40" />
       <div className="absolute inset-x-[7%] top-[12%] overflow-hidden rounded-xl border border-white/[0.08] bg-ink-900/95 shadow-card">
         <div className="flex items-center gap-2 border-b border-white/[0.07] px-4 py-3">
@@ -55,7 +55,7 @@ function CodeVisual() {
 
 function ProductVisual() {
   return (
-    <div className="absolute inset-0 bg-[#0D0D0C]">
+    <div className="absolute inset-0 bg-[#0A1531]">
       <div className="absolute inset-0 grid-lines opacity-30" />
       <div className="absolute -left-[10%] top-[16%] h-10 w-[50%] -rotate-[28deg] bg-azure-500" />
 

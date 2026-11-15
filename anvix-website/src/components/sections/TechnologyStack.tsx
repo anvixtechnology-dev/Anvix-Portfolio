@@ -12,7 +12,7 @@ export function TechnologyStack() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_20%_10%,rgba(30,30,28,0.5),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_45%_at_20%_10%,rgba(21,38,79,0.5),transparent_70%)]"
       />
 
       <div className="container-anvix relative">
@@ -74,11 +74,11 @@ export function TechnologyStack() {
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex h-full flex-col justify-between gap-7 overflow-hidden rounded-2xl border border-azure-500/25 lg:flex-row lg:items-center bg-[linear-gradient(150deg,rgba(30,30,28,0.7),rgba(11,11,11,0.85))] p-6 sm:p-7"
+              className="relative flex h-full flex-col justify-between gap-7 overflow-hidden rounded-2xl border border-azure-500/25 lg:flex-row lg:items-center bg-[linear-gradient(150deg,rgba(21,38,79,0.7),rgba(8,18,43,0.85))] p-6 sm:p-7"
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(181,255,54,0.2),transparent_70%)] blur-xl"
+                className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(61,139,255,0.2),transparent_70%)] blur-xl"
               />
               <div className="max-w-xl">
                 <h3 className="font-display text-lg text-mist-50">Capability, not just tools</h3>

@@ -124,7 +124,7 @@ export function Contact() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_25%_15%,rgba(30,30,28,0.6),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_25%_15%,rgba(21,38,79,0.6),transparent_70%)]"
       />
 
       <div className="container-anvix relative">
@@ -241,7 +241,7 @@ export function Contact() {
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(181,255,54,0.12),transparent_70%)] blur-2xl"
+                className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(61,139,255,0.12),transparent_70%)] blur-2xl"
               />
 
               <div className="relative">

@@ -9,7 +9,7 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-azure-sheen text-ink-950 shadow-[0_16px_40px_-18px_rgba(181,255,54,0.75)] hover:shadow-[0_20px_52px_-16px_rgba(181,255,54,0.85)] hover:brightness-[1.06] active:scale-[0.985]',
+    'bg-azure-sheen text-ink-950 shadow-[0_16px_40px_-18px_rgba(61,139,255,0.75)] hover:shadow-[0_20px_52px_-16px_rgba(61,139,255,0.85)] hover:brightness-[1.06] active:scale-[0.985]',
   secondary:
     'border border-white/12 bg-white/[0.04] text-mist-50 hover:border-azure-500/45 hover:bg-white/[0.07] active:scale-[0.985]',
   outline:

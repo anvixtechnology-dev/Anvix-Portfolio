@@ -26,7 +26,7 @@ interface IntroSequenceProps {
 /**
  * Full-screen cinematic opening:
  * black → accent lines draw → ANVIX unmasks horizontally → INNOVATION /
- * DIGITAL IMPACT rise letter by letter while a lime prism sweeps diagonally
+ * DIGITAL IMPACT rise letter by letter while a blue prism sweeps diagonally
  * through the frame → the frame splits into two curtains to reveal the site.
  */
 export function IntroSequence({ onReveal, onComplete }: IntroSequenceProps) {
@@ -168,7 +168,7 @@ export function IntroSequence({ onReveal, onComplete }: IntroSequenceProps) {
         <div
           data-glow
           aria-hidden="true"
-          className="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(181,255,54,0.13),transparent_62%)]"
+          className="absolute left-1/2 top-1/2 h-[70vmin] w-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(61,139,255,0.13),transparent_62%)]"
         />
 
         {/* Accent lines */}

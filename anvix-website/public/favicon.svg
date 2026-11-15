@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
   <defs>
     <linearGradient id="g" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#D9FF94"/>
-      <stop offset="0.45" stop-color="#B5FF36"/>
-      <stop offset="1" stop-color="#557F0D"/>
+      <stop stop-color="#A9CBFF"/>
+      <stop offset="0.45" stop-color="#3D8BFF"/>
+      <stop offset="1" stop-color="#163F88"/>
     </linearGradient>
     <linearGradient id="c" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#1E1E1C"/>
-      <stop offset="1" stop-color="#080808"/>
+      <stop stop-color="#15264F"/>
+      <stop offset="1" stop-color="#071027"/>
     </linearGradient>
   </defs>
   <rect width="48" height="48" rx="12" fill="url(#c)"/>
   <path d="M24 12 L33 35 H28.6 L24 22.6 L19.4 35 H15 Z" fill="url(#g)"/>
   <path d="M24 12 L24 22.6 L19.4 35 H15 Z" fill="url(#g)" fill-opacity="0.6"/>
-  <rect x="21.4" y="27.6" width="5.2" height="2" rx="1" fill="#B5FF36" fill-opacity="0.8"/>
-  <ellipse cx="24" cy="24" rx="21" ry="8.4" stroke="#B5FF36" stroke-opacity="0.5" fill="none" transform="rotate(-24 24 24)"/>
+  <rect x="21.4" y="27.6" width="5.2" height="2" rx="1" fill="#3D8BFF" fill-opacity="0.8"/>
+  <ellipse cx="24" cy="24" rx="21" ry="8.4" stroke="#3D8BFF" stroke-opacity="0.5" fill="none" transform="rotate(-24 24 24)"/>
 </svg>

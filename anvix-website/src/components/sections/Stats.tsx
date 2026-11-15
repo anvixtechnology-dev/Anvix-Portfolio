@@ -18,7 +18,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
       {/* Hover wash */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_100%_at_50%_0%,rgba(181,255,54,0.09),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_100%_at_50%_0%,rgba(61,139,255,0.09),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
       <span
         aria-hidden="true"
@@ -50,7 +50,7 @@ export function Stats() {
     <section aria-label="Company statistics" className="relative border-y border-white/[0.06] bg-ink-950/40">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(30,30,28,0.45),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_100%_at_50%_0%,rgba(21,38,79,0.45),transparent_70%)]"
       />
       <div className="container-anvix relative">
         <div className="grid grid-cols-2 gap-x-6 gap-y-2 lg:grid-cols-4 lg:gap-x-10">

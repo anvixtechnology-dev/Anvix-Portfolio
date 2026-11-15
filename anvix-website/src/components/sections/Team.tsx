@@ -44,7 +44,7 @@ function PartnerPortrait({ member }: { member: TeamMember }) {
         <div className="absolute inset-0 grid place-items-center">
           {/* Placeholder texture */}
           <div className="absolute inset-0 grid-lines opacity-40" />
-          <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_25%,rgba(181,255,54,0.13),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_25%,rgba(61,139,255,0.13),transparent_70%)]" />
 
           <div className="relative flex flex-col items-center gap-4 px-6 text-center">
             <span className="inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-azure-500/30 bg-ink-950/50 font-display text-2xl tracking-tightest text-azure-300 backdrop-blur-sm">
@@ -108,7 +108,7 @@ function PartnerCard({ member, index }: { member: TeamMember; index: number }) {
       )}
     >
       <CornerAccent className="opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(181,255,54,0.09),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(61,139,255,0.09),transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       <PartnerPortrait member={member} />
 
@@ -159,7 +159,7 @@ export function Team() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(30,30,28,0.5),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute -right-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(21,38,79,0.5),transparent_70%)] blur-3xl"
       />
 
       <div className="container-anvix relative">
